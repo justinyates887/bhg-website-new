@@ -27,6 +27,10 @@
 
 > - [Tests](#Tests)
 
+> - [Important Links](#Important-Links)
+
+> - [Demo](#Demo)
+
 
 ## <a name="Description"></a>Description
 
@@ -85,3 +89,13 @@ SOFTWARE.
 ## <a name="Tests"></a>Tests
 
 Testing will be done manually with the help of **site for dummy credit cards**
+
+## <a name="Important-Links"><a/>Important Links
+  
+[Website](https://bluehair.xyz)
+
+Invite the [Bot](https://tinyurl.com/ysesvxdb)
+
+Check out the Bot's [Source Code](https://github.com/justinyates887/BHG-Beta)
+  
+## <a name="Demo"><a/>Demo
