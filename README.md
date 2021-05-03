@@ -12,7 +12,8 @@
 ## Join The Official Discord!
 
 ![discord](https://img.shields.io/discord/795324515034726410?label=Discord&style=social)
-[The BLue Haired Girl Bot](https://discord.gg/FqbRWkgfcT)
+
+[The Blue Haired Girl Bot](https://discord.gg/FqbRWkgfcT)
 
 ## Table of Contents
 
