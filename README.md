@@ -17,6 +17,8 @@
 
 > - [Contributors](#Contributors)
 
+> - [License](#License)
+
 > - [Tests](#Tests)
 
 
@@ -46,7 +48,9 @@ AND access more features for my server
 
 ## <a name="Contributors"></a>Contributors
 
-[Even Chaytor](https://github.com/Azrael747) (Co-creator of The Blue Haired Girl)
+[Evan Chaytor](https://github.com/Azrael747) (Co-creator of The Blue Haired Girl)
+
+## <a name="License"><a/>License
 
 ## <a name="Tests"></a>Tests
 
