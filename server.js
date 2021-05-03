@@ -41,9 +41,6 @@ mongoose.connect(process.env.URI,
       console.error('[mongoose] reconnection failed due to error:' + error);
   });
 
-app.use(require("./routes/api.js"));
-app.use(require("./routes/html.js"));
-
 app.listen(PORT, () => {
     console.log(`App running on port ${PORT}!`);
 });
