@@ -9,6 +9,11 @@
 ![stars](https://img.shields.io/github/stars/justinyates887/bhg-website-new)
 ![pulls](https://img.shields.io/github/issues-pr-closed/justinyates887/bhg-website-new)
 
+## Join The Official Discord!
+
+![discord](https://img.shields.io/discord/795324515034726410?label=Discord&style=social)
+[The BLue Haired Girl Bot](https://discord.gg/FqbRWkgfcT)
+
 ## Table of Contents
 
 > - [Description](#Description)
