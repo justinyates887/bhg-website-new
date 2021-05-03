@@ -1,0 +1,847 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="../assets/style.css">
+    <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"  media="screen,projection"/>
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta charset="UTF-8">
+    <title>The Blue Haired Girl</title>
+  </head>
+
+  <body id="body">
+
+    <nav>
+        <div class="nav-wrapper blue accent-3">
+          <a href="../assets/images/BHG.png" class="brand-logo circle responsive-img"><img src="../assets/images/BHG.png" alt="brand-logo" wdith="60" height="60"></a>
+          <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="#">Commands</a></li>
+            <li><a href="support.html">Support</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="donate.html">Donate</a></li>
+            <li><a href="music.html">Music</a></li>
+          </ul>
+        </div>
+      </nav>
+
+    <div class="container">
+
+        <div class="row valign-wrapper">
+            <div class="col s10 offset-s1">
+                <h1 class="center-align blue-text darken-3" id="mainHead"><strong>COMMANDS</strong></h1><br/>
+                <h4 class="center-align white-text" id="desc">
+                   Take a look through our current <strong><span class="blue-text darken-3">commands</span></strong> to
+                   see what you can do!
+                </h4>
+            </div>
+        </div>
+
+        <div class="row" id="commandsList">
+            <div class="col s12 transparent">
+                <div class="card transparent">
+                    <div class="card-tabs transparent blue-text">
+                      <ul class="tabs tabs-fixed-width transparent blue-text">
+                        <li class="tab blue-text"><a href="#admin" class="blue-text">Admin</a></li>
+                        <li class="tab blue-text"><a href="#reddit"class="blue-text">Reddit</a></li>
+                        <li class="tab blue-text"><a href="#games"class="blue-text">Games</a></li>
+                        <li class="tab blue-text"><a href="#music"class="blue-text">Music</a></li>
+                        <li class="tab blue-text"><a href="#help"class="blue-text">Help</a></li>
+                      </ul>
+                    </div>
+
+                    <div class="card-content transparent">
+                      <div id="admin">
+                        <div class="row"id="card">
+                            <div class="col s10 offset-s1">
+                                <div class="card grey darken-3 hoverable">
+                                    <div class="card-content left-align">
+                                    <span class="card-title activator white-text">kick<i class="material-icons right">more_vert</i></span>
+                                    </div>
+                                    <div class="card-reveal grey darken-3">
+                                    <span class="card-title white-text">kick<i class="material-icons right">close</i></span>
+                                    <p class="white-text">
+                                        Kick a user from your channel
+                                        <blockquote>
+                                            Usage:
+                                        </blockquote>
+                                        b!kick (target) + (reason [optional])
+                                    </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row"id="card">
+                            <div class="col s10 offset-s1">
+                                <div class="card grey darken-3 hoverable">
+                                    <div class="card-content left-align">
+                                    <span class="card-title activator white-text">ban<i class="material-icons right">more_vert</i></span>
+                                    </div>
+                                    <div class="card-reveal grey darken-3">
+                                    <span class="card-title white-text">ban<i class="material-icons right">close</i></span>
+                                    <p class="white-text">
+                                        Ban a user from your channel
+                                        <blockquote>
+                                            Usage:
+                                        </blockquote>
+                                        b!ban (target) + (reason [optional])
+                                    </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row"id="card">
+                            <div class="col s10 offset-s1">
+                                <div class="card grey darken-3 hoverable">
+                                    <div class="card-content left-align">
+                                    <span class="card-title activator white-text">mute<i class="material-icons right">more_vert</i></span>
+                                    </div>
+                                    <div class="card-reveal grey darken-3">
+                                    <span class="card-title white-text">mute<i class="material-icons right">close</i></span>
+                                    <p class="white-text">
+                                        Mute a user from your channel for a select amount of time
+                                        <blockquote>
+                                            Usage:
+                                        </blockquote>
+                                        b!mute (target) + (time)
+                                    </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row"id="card">
+                            <div class="col s10 offset-s1">
+                                <div class="card grey darken-3 hoverable">
+                                    <div class="card-content left-align">
+                                    <span class="card-title activator white-text">warn<i class="material-icons right">more_vert</i></span>
+                                    </div>
+                                    <div class="card-reveal grey darken-3">
+                                    <span class="card-title white-text">warn<i class="material-icons right">close</i></span>
+                                    <p class="white-text">
+                                        Warns a user from your channel (no current database of warns, so this is considered a formality)
+                                        <blockquote>
+                                            Usage:
+                                        </blockquote>
+                                        b!warn (target) + (reason [optional])
+                                    </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row"id="card">
+                            <div class="col s10 offset-s1">
+                                <div class="card grey darken-3 hoverable">
+                                    <div class="card-content left-align">
+                                    <span class="card-title activator white-text">purge<i class="material-icons right">more_vert</i></span>
+                                    </div>
+                                    <div class="card-reveal grey darken-3">
+                                    <span class="card-title white-text">purge<i class="material-icons right">close</i></span>
+                                    <p class="white-text">
+                                        Purges a select amount of messages from channel command is run in.
+                                        <blockquote>
+                                            Usage:
+                                        </blockquote>
+                                        b!purge (amount)
+                                    </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>    
+
+                        <div class="row"id="card">
+                            <div class="col s10 offset-s1">
+                                <div class="card grey darken-3 hoverable">
+                                    <div class="card-content left-align">
+                                    <span class="card-title activator white-text">nuke<i class="material-icons right">more_vert</i></span>
+                                    </div>
+                                    <div class="card-reveal grey darken-3">
+                                    <span class="card-title white-text">nuke<i class="material-icons right">close</i></span>
+                                    <p class="white-text">
+                                        Deletes a channel and replaces it
+                                        <blockquote>
+                                            Usage:
+                                        </blockquote>
+                                        b!nuke
+                                    </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row"id="card">
+                            <div class="col s10 offset-s1">
+                                <div class="card grey darken-3 hoverable">
+                                    <div class="card-content left-align">
+                                    <span class="card-title activator white-text">channelcreate<i class="material-icons right">more_vert</i></span>
+                                    </div>
+                                    <div class="card-reveal grey darken-3">
+                                    <span class="card-title white-text">channelcreate<i class="material-icons right">close</i></span>
+                                    <p class="white-text">
+                                        Creates a channel in your server
+                                        <blockquote>
+                                            Usage:
+                                        </blockquote>
+                                        b!channelcreate (channel type [voice/text]) + (channel name)
+                                    </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row"id="card">
+                            <div class="col s10 offset-s1">
+                                <div class="card grey darken-3 hoverable">
+                                    <div class="card-content left-align">
+                                    <span class="card-title activator white-text">channeldelete<i class="material-icons right">more_vert</i></span>
+                                    </div>
+                                    <div class="card-reveal grey darken-3">
+                                    <span class="card-title white-text">channeldelete<i class="material-icons right">close</i></span>
+                                    <p class="white-text">
+                                        Deletes a channel from your server
+                                        <blockquote>
+                                            Usage:
+                                        </blockquote>
+                                        b!channeldelete (#target channel)
+                                    </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row"id="card">
+                            <div class="col s10 offset-s1">
+                                <div class="card grey darken-3 hoverable">
+                                    <div class="card-content left-align">
+                                    <span class="card-title activator white-text">giverole<i class="material-icons right">more_vert</i></span>
+                                    </div>
+                                    <div class="card-reveal grey darken-3">
+                                    <span class="card-title white-text">giverole<i class="material-icons right">close</i></span>
+                                    <p class="white-text">
+                                        Gives a role to a user
+                                        <blockquote>
+                                            Usage:
+                                        </blockquote>
+                                        b!giverole (target) ([@role] OR [typerole])
+                                    </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row"id="card">
+                            <div class="col s10 offset-s1">
+                                <div class="card grey darken-3 hoverable">
+                                    <div class="card-content left-align">
+                                    <span class="card-title activator white-text">removerole<i class="material-icons right">more_vert</i></span>
+                                    </div>
+                                    <div class="card-reveal grey darken-3">
+                                    <span class="card-title white-text">removerole<i class="material-icons right">close</i></span>
+                                    <p class="white-text">
+                                        Removes role from user
+                                        <blockquote>
+                                            Usage:
+                                        </blockquote>
+                                        b!removerole (target) + ([@role] OR [typerole])
+                                    </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row"id="card">
+                            <div class="col s10 offset-s1">
+                                <div class="card grey darken-3 hoverable">
+                                    <div class="card-content left-align">
+                                    <span class="card-title activator white-text">createrole<i class="material-icons right">more_vert</i></span>
+                                    </div>
+                                    <div class="card-reveal grey darken-3">
+                                    <span class="card-title white-text">createrole<i class="material-icons right">close</i></span>
+                                    <p class="white-text">
+                                        Creates a role in your server
+                                        <blockquote>
+                                            Usage:
+                                        </blockquote>
+                                        b!createrole (color [type anything for default]) + (rolename)
+                                    </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row"id="card">
+                            <div class="col s10 offset-s1">
+                                <div class="card grey darken-3 hoverable">
+                                    <div class="card-content left-align">
+                                    <span class="card-title activator white-text">deleterole<i class="material-icons right">more_vert</i></span>
+                                    </div>
+                                    <div class="card-reveal grey darken-3">
+                                    <span class="card-title white-text">deleterole<i class="material-icons right">close</i></span>
+                                    <p class="white-text">
+                                        Deletes a role from your server
+                                        <blockquote>
+                                            Usage:
+                                        </blockquote>
+                                        b!deleterole (@targetrole)
+                                    </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row"id="card">
+                            <div class="col s10 offset-s1">
+                                <div class="card grey darken-3 hoverable">
+                                    <div class="card-content left-align">
+                                    <span class="card-title activator white-text">announce<i class="material-icons right">more_vert</i></span>
+                                    </div>
+                                    <div class="card-reveal grey darken-3">
+                                    <span class="card-title white-text">announce<i class="material-icons right">close</i></span>
+                                    <p class="white-text">
+                                        Creates a styalized announcment in a specified channel
+                                        <blockquote>
+                                            Usage:
+                                        </blockquote>
+                                        b!announce (#target channel) + (message)
+                                    </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row"id="card">
+                            <div class="col s10 offset-s1">
+                                <div class="card grey darken-3 hoverable">
+                                    <div class="card-content left-align">
+                                    <span class="card-title activator white-text">startgiveaway<i class="material-icons right">more_vert</i></span>
+                                    </div>
+                                    <div class="card-reveal grey darken-3">
+                                    <span class="card-title white-text">startgiveaway<i class="material-icons right">close</i></span>
+                                    <p class="white-text">
+                                        Starts a giveaway on the last message it can find with a reaction to the message
+                                        <blockquote>
+                                            Usage:
+                                        </blockquote>
+                                        b!startgiveaway (emoji to react with)
+                                    </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row" id="card">
+                            <div class="col s10 offset-s1">
+                                <div class="card grey darken-3 hoverable">
+                                    <div class="card-content left-align">
+                                    <span class="card-title activator white-text">endgiveaway<i class="material-icons right">more_vert</i></span>
+                                    </div>
+                                    <div class="card-reveal grey darken-3">
+                                    <span class="card-title white-text">endgiveaway<i class="material-icons right">close</i></span>
+                                    <p class="white-text">
+                                        Will end the giveaway by selecting a random, non bot reaction (note: the most recent message must be the giveaway)
+                                        <blockquote>
+                                            Usage:
+                                        </blockquote>
+                                        b!endgiveaway
+                                    </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row" id="card">
+                            <div class="col s10 offset-s1">
+                                <div class="card grey darken-3 hoverable">
+                                    <div class="card-content left-align">
+                                    <span class="card-title activator white-text">ticket<i class="material-icons right">more_vert</i></span>
+                                    </div>
+                                    <div class="card-reveal grey darken-3">
+                                    <span class="card-title white-text">ticket<i class="material-icons right">close</i></span>
+                                    <p class="white-text">
+                                        Allows user to create a ticket
+                                        <blockquote>
+                                            Usage:
+                                        </blockquote>
+                                        b!ticket
+                                    </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row" id="card">
+                            <div class="col s10 offset-s1">
+                                <div class="card grey darken-3 hoverable">
+                                    <div class="card-content left-align">
+                                    <span class="card-title activator white-text">addlogchannel<i class="material-icons right">more_vert</i></span>
+                                    </div>
+                                    <div class="card-reveal grey darken-3">
+                                    <span class="card-title white-text">addlogchannel<i class="material-icons right">close</i></span>
+                                    <p class="white-text">
+                                        Will create a channel called blue-logs where all logs will be sent (until database update)
+                                        <blockquote>
+                                            Usage:
+                                        </blockquote>
+                                        b!addlogchannel
+                                    </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                      </div>
+
+                      <div id="reddit">
+
+                        <div class="row" id="card">
+                            <div class="col s10 offset-s1">
+                                <div class="card  deep-orange darken-4 hoverable">
+                                    <div class="card-content left-align">
+                                    <span class="card-title activator white-text">aww<i class="material-icons right">more_vert</i></span>
+                                    </div>
+                                    <div class="card-reveal  deep-orange darken-4">
+                                    <span class="card-title white-text">aww<i class="material-icons right">close</i></span>
+                                    <p class="white-text">
+                                        Sends a meme from r/aww
+                                        <blockquote>
+                                            Usage:
+                                        </blockquote>
+                                        b!aww
+                                    </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row" id="card">
+                            <div class="col s10 offset-s1">
+                                <div class="card  deep-orange darken-4 hoverable">
+                                    <div class="card-content left-align">
+                                    <span class="card-title activator white-text">wholesome<i class="material-icons right">more_vert</i></span>
+                                    </div>
+                                    <div class="card-reveal  deep-orange darken-4">
+                                    <span class="card-title white-text">wholesome<i class="material-icons right">close</i></span>
+                                    <p class="white-text">
+                                        Sends a meme from r/wholesome
+                                        <blockquote>
+                                            Usage:
+                                        </blockquote>
+                                        b!wholesome
+                                    </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row" id="card">
+                            <div class="col s10 offset-s1">
+                                <div class="card  deep-orange darken-4 hoverable">
+                                    <div class="card-content left-align">
+                                    <span class="card-title activator white-text">meme<i class="material-icons right">more_vert</i></span>
+                                    </div>
+                                    <div class="card-reveal  deep-orange darken-4">
+                                    <span class="card-title white-text">meme<i class="material-icons right">close</i></span>
+                                    <p class="white-text">
+                                        Sends a meme from r/meme
+                                        <blockquote>
+                                            Usage:
+                                        </blockquote>
+                                        b!meme
+                                    </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row" id="card">
+                            <div class="col s10 offset-s1">
+                                <div class="card  deep-orange darken-4 hoverable">
+                                    <div class="card-content left-align">
+                                    <span class="card-title activator white-text">hentai<i class="material-icons right">more_vert</i></span>
+                                    </div>
+                                    <div class="card-reveal  deep-orange darken-4">
+                                    <span class="card-title white-text">hentai<i class="material-icons right">close</i></span>
+                                    <p class="white-text">
+                                        Sends an image from r/hentai
+                                        <blockquote>
+                                            Usage:
+                                        </blockquote>
+                                        b!hentai (Only works in nsfw channels)
+                                    </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row" id="card">
+                            <div class="col s10 offset-s1">
+                                <div class="card  deep-orange darken-4 hoverable">
+                                    <div class="card-content left-align">
+                                    <span class="card-title activator white-text">reddit<i class="material-icons right">more_vert</i></span>
+                                    </div>
+                                    <div class="card-reveal  deep-orange darken-4">
+                                    <span class="card-title white-text">reddit<i class="material-icons right">close</i></span>
+                                    <p class="white-text">
+                                        Sends a meme from the subreddit of your choice
+                                        <blockquote>
+                                            Usage:
+                                        </blockquote>
+                                        b!reddit (subreddit)
+                                    </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                      </div>
+
+                      <div id="games">
+
+                        <div class="row" id="card">
+                            <div class="col s10 offset-s1">
+                                <div class="card  deep-purple darken-4 hoverable">
+                                    <div class="card-content left-align">
+                                    <span class="card-title activator white-text">roll<i class="material-icons right">more_vert</i></span>
+                                    </div>
+                                    <div class="card-reveal deep-purple darken-4">
+                                    <span class="card-title white-text">roll<i class="material-icons right">close</i></span>
+                                    <p class="white-text">
+                                        Rolls a dice
+                                        <blockquote>
+                                            Usage:
+                                        </blockquote>
+                                        b!roll (ex. 2d20+4) or (d8) etc.
+                                    </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row" id="card">
+                            <div class="col s10 offset-s1">
+                                <div class="card  deep-purple darken-4 hoverable">
+                                    <div class="card-content left-align">
+                                    <span class="card-title activator white-text">vote<i class="material-icons right">more_vert</i></span>
+                                    </div>
+                                    <div class="card-reveal deep-purple darken-4">
+                                    <span class="card-title white-text">vote<i class="material-icons right">close</i></span>
+                                    <p class="white-text">
+                                        Upvote or downvote the most recent post!
+                                        <blockquote>
+                                            Usage:
+                                        </blockquote>
+                                        b!vote
+                                    </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                      </div>
+
+                      <div id="music">
+
+                        <div class="row" id="card">
+                            <div class="col s10 offset-s1">
+                                <div class="card pink darken-4 hoverable">
+                                    <div class="card-content left-align">
+                                    <span class="card-title activator white-text">play<i class="material-icons right">more_vert</i></span>
+                                    </div>
+                                    <div class="card-reveal pink darken-4">
+                                    <span class="card-title white-text">play<i class="material-icons right">close</i></span>
+                                    <p class="white-text">
+                                        Plays a song
+                                        <blockquote>
+                                            Usage:
+                                        </blockquote>
+                                        b!play or b!p + (song)
+                                    </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row" id="card">
+                            <div class="col s10 offset-s1">
+                                <div class="card pink darken-4 hoverable">
+                                    <div class="card-content left-align">
+                                    <span class="card-title activator white-text">loop<i class="material-icons right">more_vert</i></span>
+                                    </div>
+                                    <div class="card-reveal pink darken-4">
+                                    <span class="card-title white-text">loop<i class="material-icons right">close</i></span>
+                                    <p class="white-text">
+                                        Loops the current song
+                                        <blockquote>
+                                            Usage:
+                                        </blockquote>
+                                        b!loop
+                                    </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row" id="card">
+                            <div class="col s10 offset-s1">
+                                <div class="card pink darken-4 hoverable">
+                                    <div class="card-content left-align">
+                                    <span class="card-title activator white-text">skip<i class="material-icons right">more_vert</i></span>
+                                    </div>
+                                    <div class="card-reveal pink darken-4">
+                                    <span class="card-title white-text">skip<i class="material-icons right">close</i></span>
+                                    <p class="white-text">
+                                       Skips current song
+                                        <blockquote>
+                                            Usage:
+                                        </blockquote>
+                                        b!skip
+                                    </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row" id="card">
+                            <div class="col s10 offset-s1">
+                                <div class="card pink darken-4 hoverable">
+                                    <div class="card-content left-align">
+                                    <span class="card-title activator white-text">pause<i class="material-icons right">more_vert</i></span>
+                                    </div>
+                                    <div class="card-reveal pink darken-4">
+                                    <span class="card-title white-text">pause<i class="material-icons right">close</i></span>
+                                    <p class="white-text">
+                                        Pauses current song
+                                        <blockquote>
+                                            Usage:
+                                        </blockquote>
+                                        b!pause
+                                    </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row" id="card">
+                            <div class="col s10 offset-s1">
+                                <div class="card pink darken-4 hoverable">
+                                    <div class="card-content left-align">
+                                    <span class="card-title activator white-text">resume<i class="material-icons right">more_vert</i></span>
+                                    </div>
+                                    <div class="card-reveal pink darken-4">
+                                    <span class="card-title white-text">resume<i class="material-icons right">close</i></span>
+                                    <p class="white-text">
+                                        Resumes song
+                                        <blockquote>
+                                            Usage:
+                                        </blockquote>
+                                        b!resume
+                                    </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row" id="card">
+                            <div class="col s10 offset-s1">
+                                <div class="card pink darken-4 hoverable">
+                                    <div class="card-content left-align">
+                                    <span class="card-title activator white-text">nowplaying<i class="material-icons right">more_vert</i></span>
+                                    </div>
+                                    <div class="card-reveal pink darken-4">
+                                    <span class="card-title white-text">nowplaying<i class="material-icons right">close</i></span>
+                                    <p class="white-text">
+                                        Tells you what song is playing
+                                        <blockquote>
+                                            Usage:
+                                        </blockquote>
+                                        b!nowplaying
+                                    </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row" id="card">
+                            <div class="col s10 offset-s1">
+                                <div class="card pink darken-4 hoverable">
+                                    <div class="card-content left-align">
+                                    <span class="card-title activator white-text">shuffle<i class="material-icons right">more_vert</i></span>
+                                    </div>
+                                    <div class="card-reveal pink darken-4">
+                                    <span class="card-title white-text">shuffle<i class="material-icons right">close</i></span>
+                                    <p class="white-text">
+                                        Shuffles queue
+                                        <blockquote>
+                                            Usage:
+                                        </blockquote>
+                                        b!shuffle
+                                    </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row" id="card">
+                            <div class="col s10 offset-s1">
+                                <div class="card pink darken-4 hoverable">
+                                    <div class="card-content left-align">
+                                    <span class="card-title activator white-text">stop<i class="material-icons right">more_vert</i></span>
+                                    </div>
+                                    <div class="card-reveal pink darken-4">
+                                    <span class="card-title white-text">stop<i class="material-icons right">close</i></span>
+                                    <p class="white-text">
+                                        Disconnects the bot
+                                        <blockquote>
+                                            Usage:
+                                        </blockquote>
+                                        b!stop
+                                    </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row" id="card">
+                            <div class="col s10 offset-s1">
+                                <div class="card pink darken-4 hoverable">
+                                    <div class="card-content left-align">
+                                    <span class="card-title activator white-text">clear-queue<i class="material-icons right">more_vert</i></span>
+                                    </div>
+                                    <div class="card-reveal pink darken-4">
+                                    <span class="card-title white-text">clear-queue<i class="material-icons right">close</i></span>
+                                    <p class="white-text">
+                                        Clears current queue
+                                        <blockquote>
+                                            Usage:
+                                        </blockquote>
+                                        b!clear-queue
+                                    </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row" id="card">
+                            <div class="col s10 offset-s1">
+                                <div class="card pink darken-4 hoverable">
+                                    <div class="card-content left-align">
+                                    <span class="card-title activator white-text">filter<i class="material-icons right">more_vert</i></span>
+                                    </div>
+                                    <div class="card-reveal pink darken-4">
+                                    <span class="card-title white-text">filter<i class="material-icons right">close</i></span>
+                                    <p class="white-text">
+                                        Filters music with a list of filters to choose from: (8D, gate, haas, phaser, treble, tremolo, 
+                                        vibrato, reverse, karaoke, flanger, mcompand, pulsator, subboost, bassboost, vaporwave, nightcore, 
+                                        normalizer, surrounding)
+                                        <blockquote>
+                                            Usage:
+                                        </blockquote>
+                                        b!filter + (filter)
+                                    </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div id="help">
+
+                        <div class="row" id="card">
+                            <div class="col s10 offset-s1">
+                                <div class="card green darken-4 hoverable">
+                                    <div class="card-content left-align">
+                                    <span class="card-title activator white-text">help<i class="material-icons right">more_vert</i></span>
+                                    </div>
+                                    <div class="card-reveal green darken-4">
+                                    <span class="card-title white-text">help<i class="material-icons right">close</i></span>
+                                    <p class="white-text">
+                                        Sends list of help commands
+                                        <blockquote>
+                                            Usage:
+                                        </blockquote>
+                                        b!help
+                                    </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row" id="card">
+                            <div class="col s10 offset-s1">
+                                <div class="card green darken-4 hoverable">
+                                    <div class="card-content left-align">
+                                    <span class="card-title activator white-text">developers<i class="material-icons right">more_vert</i></span>
+                                    </div>
+                                    <div class="card-reveal green darken-4">
+                                    <span class="card-title white-text">developers<i class="material-icons right">close</i></span>
+                                    <p class="white-text">
+                                        Sends developer info
+                                        <blockquote>
+                                            Usage:
+                                        </blockquote>
+                                        b!developers
+                                    </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row" id="card">
+                            <div class="col s10 offset-s1">
+                                <div class="card green darken-4 hoverable">
+                                    <div class="card-content left-align">
+                                    <span class="card-title activator white-text">invitebot<i class="material-icons right">more_vert</i></span>
+                                    </div>
+                                    <div class="card-reveal green darken-4">
+                                    <span class="card-title white-text">invitebot<i class="material-icons right">close</i></span>
+                                    <p class="white-text">
+                                        Sends invite link for bot
+                                        <blockquote>
+                                            Usage:
+                                        </blockquote>
+                                        b!invitebot
+                                    </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row" id="card">
+                            <div class="col s10 offset-s1">
+                                <div class="card green darken-4 hoverable">
+                                    <div class="card-content left-align">
+                                    <span class="card-title activator white-text">donate<i class="material-icons right">more_vert</i></span>
+                                    </div>
+                                    <div class="card-reveal green darken-4">
+                                    <span class="card-title white-text">donate<i class="material-icons right">close</i></span>
+                                    <p class="white-text">
+                                        Sends links to help support production
+                                        <blockquote>
+                                            Usage:
+                                        </blockquote>
+                                        b!donate
+                                    </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    </div>
+                  </div>
+            </div>
+        </div>
+
+    </div>
+    <!--JavaScript at end of body for optimized loading-->
+    <script type="text/javascript" src="../assets/scripts.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  </body>
+</html>
