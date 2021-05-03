@@ -58,11 +58,11 @@ I **WANT** to support development
 
 ## <a name="Contributors"></a>Contributors
 
-![](https://github.com/justinyates887.png?size=75) 
+![](https://github.com/justinyates887.png?size=100) 
 
 [Justin Yates](https://github.com/justinyates887) (Co-creator of The Blue Haired Girl)
 
-![](https://github.com/Azrael747.png?size=75)
+![](https://github.com/Azrael747.png?size=100)
 
 [Evan Chaytor](https://github.com/Azrael747) (Co-creator of The Blue Haired Girl)
 
