@@ -34,7 +34,7 @@
 
 ## <a name="Description"></a>Description
 
-This is an upgraded website for The BLue Haired Girl Discord bot. The goal with this website is to:
+**This is an upgraded website for The BLue Haired Girl Discord bot. The goal with this website is to:**
 
 1) Allow for users to custmize their bots settings from a UI instead of using commands from their Discord server.
 
@@ -96,7 +96,7 @@ Testing will be done manually with the help of **site for dummy credit cards**
 
 ## <a name="Important-Links"><a/>Important Links
   
-[Website](https://bluehair.xyz)
+Visit the [Website](https://bluehair.xyz)
 
 Invite the [Bot](https://tinyurl.com/ysesvxdb)
 
