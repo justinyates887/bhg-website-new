@@ -32,19 +32,19 @@ This is an upgraded website for The BLue Haired Girl Discord bot. The goal with 
 
 ## <a name="Usage"></a>Usage
 
-AS a Discord server owner
-I WANT to be able to customize my bot
+**AS** a Discord server owner
 
-FROM a UI
+I **WANT** to be able to customize my bot
 
-SO my users and I have an enhanced expirence
+**FROM** a UI
 
+**SO** my users and I have an enhanced expirence
 
-AS a supporter of the bot
+**AS** a supporter of the bot
 
-I WANT to support development
+I **WANT** to support development
 
-AND access more features for my server
+**AND** access more features for my server
 
 ## <a name="Contributors"></a>Contributors
 
