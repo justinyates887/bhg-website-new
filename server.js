@@ -22,7 +22,7 @@ mongoose.connect(process.env.URI,
     }
   );
 
-  mongoose.connection
+mongoose.connection
   .on('error', (error) => {
       console.error('Error at mongo.js :' + error)
   })
@@ -42,8 +42,8 @@ mongoose.connect(process.env.URI,
       console.error('[mongoose] reconnection failed due to error:' + error);
   });
 
-  app.listen(PORT, () => {
+app.use(require("./routes/html.js"));
+
+app.listen(PORT, () => {
     console.log(`App running on port ${PORT}!`);
 });
-
-app.use(require("./routes/html.js"));
