@@ -1,10 +1,11 @@
 const express = require("express");
 const mongoose = require("mongoose");
+const path = require('path');
 require('dotenv').config()
 
-const PORT = process.env.PORT || 8080;
-
 const app = express();
+
+const PORT = process.env.PORT || 8080;
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -41,6 +42,8 @@ mongoose.connect(process.env.URI,
       console.error('[mongoose] reconnection failed due to error:' + error);
   });
 
-app.listen(PORT, () => {
+  app.listen(PORT, () => {
     console.log(`App running on port ${PORT}!`);
 });
+
+app.use(require("./routes/html.js"));
