@@ -5,7 +5,8 @@ const path = require('path');
 router.get('/discord', passport.authenticate('discord'))
 
 router.get('/discord/redirect', passport.authenticate('discord'), (req, res) => {
-    res.send(200)
+    res.redirect('http://localhost:8080/dashboard')
+    //res.send(200)
 })
 
 router.get('/', (req, res) => {

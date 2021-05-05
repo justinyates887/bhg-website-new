@@ -1,9 +1,10 @@
 require('dotenv').config()
-require('./src/strategies/discord')
+require('./client/src/strategies/discord')
 
 const express = require("express");
 const mongoose = require("mongoose");
 const passport = require('passport')
+const cors = require('cors')
 const session = require('express-session')
 const Store = require('connect-mongo')
 
@@ -46,6 +47,11 @@ mongoose.connection
         console.error('[mongoose] reconnection failed due to error:' + error);
     });
 
+app.use(cors({
+    origin: ['http://localhost:8080'],
+    credientials: true
+}))
+
 app.use(session({
     secret: 'secret',
     cookie: {
@@ -59,7 +65,7 @@ app.use(session({
 app.use(passport.initialize())
 app.use(passport.session())
 
-app.use(require("./src/routes/html.js"));
+app.use(require("./client/src/routes/html.js"));
 
 app.listen(PORT, () => {
     console.log(`App running on port ${PORT}`);
