@@ -2,7 +2,7 @@
   "name": "bhg-website-new",
   "version": "1.0.0",
   "description": "A new website for the Blue Haired Girl",
-  "main": "server.js",
+  "main": "src/server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node .",
