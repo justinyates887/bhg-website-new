@@ -28,7 +28,8 @@ const websiteUserSchema = new mongoose.Schema({
     }, 
     isPremium: {
         type: Boolean,
-        required: true
+        required: true,
+        default: false
     }
 })
 
