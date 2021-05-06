@@ -1,5 +1,6 @@
 require('dotenv').config()
 require('./strategies/discord')
+const routes = require('./routes')
 
 const express = require("express");
 const mongoose = require("mongoose");
@@ -65,7 +66,7 @@ app.use(session({
 app.use(passport.initialize())
 app.use(passport.session())
 
-app.use(require("./routes/index.js"));
+app.use('/api', routes);
 
 app.listen(PORT, () => {
     console.log(`App running on port ${PORT}`);
