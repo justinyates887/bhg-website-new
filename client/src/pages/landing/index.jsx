@@ -19,7 +19,7 @@ export function Landing({
         })
     }, [])
 
-    const login = () => window.location.href = 'http://localhost:8080/auth/discord'
+    const login = () => window.location.href = 'http://localhost:8080/api/auth/discord'
 
     return !loading && (
         <div>
@@ -34,7 +34,7 @@ export function Landing({
                         <li><a href="/music">Music</a></li>
                         <Button
                             onClick={login}
-                            variantColor="blue"
+                            variantcolor="blue"
                         >Login</Button>
                     </ul>
                 </div>

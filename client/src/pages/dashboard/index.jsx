@@ -13,7 +13,7 @@ export function Dashboard({
             setUser(data)
             setLoading(false)
         }).catch((err) => {
-            history.push('/')
+            history.push('http://loclahost:8080/api/discord/auth')
             setLoading(false)
         })
     }, [])

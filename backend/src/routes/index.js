@@ -4,24 +4,8 @@ const auth = require('./auth')
 const discord = require('./discord')
 
 //Standard Routes
-router.get('/', function(req, res) {
-    res.sendFile(path.join(__dirname, '../../public/index.html'));
-});
-
-router.get('/commands', function(req, res) {
-    res.sendFile(path.join(__dirname, '../../public/commands.html'));
-});
-
-router.get('/faq', function(req, res) {
-    res.sendFile(path.join(__dirname, '../../public/faq.html'));
-});
-
-router.get('/music', function(req, res) {
-    res.sendFile(path.join(__dirname, '../../public/music.html'));
-});
-
-router.get('/support', function(req, res) {
-    res.sendFile(path.join(__dirname, '../../public/support.html'));
+router.get('/api', function(req, res) {
+    res.send(200);
 });
 
 router.use('/auth', auth)

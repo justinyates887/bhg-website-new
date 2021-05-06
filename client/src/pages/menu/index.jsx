@@ -1,7 +1,7 @@
 import React from 'react'
 import { getUserDetails } from '../../utils/api'
 
-export function Payment({
+export function Menu({
     history,
 }){
     const [user, setUser] = React.useState(null)
@@ -20,7 +20,7 @@ export function Payment({
 
     return !loading && (
         <div>
-            <h1>Payment</h1>
+            <h1>Menu</h1>
         </div>
     )
 }
