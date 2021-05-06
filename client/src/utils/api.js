@@ -5,3 +5,9 @@ export function getUserDetails() {
         withCredentials: true
     })
 }
+
+export function getGuilds() {
+    return axios.get('https://localhost:8080/api/discord/guilds', {
+        withCredentials: true
+    })
+}
