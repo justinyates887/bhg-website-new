@@ -37,7 +37,8 @@ passport.use(new DiscordStrategy({
                     guilds,
                     email,
                 }, {
-                    upsert: true
+                    upsert: true,
+                    new: true
                 }
             ).exec()
 
@@ -45,7 +46,7 @@ passport.use(new DiscordStrategy({
                 return done(null, findUser)
             } else {
                 const newUser = User.create({
-                    discordId: id,
+                    discordID: id,
                     username,
                     discriminator,
                     avatar,
