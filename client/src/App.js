@@ -1,5 +1,4 @@
 import './assets/styles/App.css';
-import { Button } from "@chakra-ui/react"
 import { Switch, Route } from 'react-router-dom'
 import { Menu, Dashboard, Payment, Landing, Faq, Commands, Music, Support } from './pages';
 

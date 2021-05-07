@@ -12,12 +12,15 @@ export function Menu({
     React.useEffect( () => {
         getUserDetails()
         .then(( {data} ) => {
+            console.log(data)
             setUser(data)
             setLoading(false)
             return getGuilds()
         }).then(({ data }) => {
+            console.log(data)
             setGuilds(data)
         }).catch((err) => {
+            console.log(err)
             history.push('/api/discord/auth')
             setLoading(false)
         })
@@ -26,7 +29,7 @@ export function Menu({
     return !loading && (
         <div>
             <h1>Menu</h1>
-            <MenuComponent guilds={ guilds }/>
+            <MenuComponent guilds={ guilds } />
         </div>
     )
 }
