@@ -1,5 +1,4 @@
 import React from 'react'
-import { getUserDetails } from '../../utils/api'
 
 export function Commands(props){
 

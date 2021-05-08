@@ -14,11 +14,11 @@ export function Menu({
         .then(( {data} ) => {
             console.log(data)
             setUser(data)
-            setLoading(false)
             return getGuilds()
         }).then(({ data }) => {
             console.log(data)
             setGuilds(data)
+            setLoading(false)
         }).catch((err) => {
             console.log(err)
             history.push('/api/discord/auth')

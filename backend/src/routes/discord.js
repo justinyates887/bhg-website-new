@@ -1,7 +1,14 @@
 const router = require('express').Router()
 const { getBotGuilds } = require('../utils/api')
-const User = require('../db/user')
+const User = require('../db/schemas/user')
 const { getMutualGuilds } = require('../utils/utils')
+const commandPrefixSchema = require('../db/schemas/command-prefix-schema')
+
+router.get('/guilds/:guildID/prefixConfig', async (req, res) => {
+    const { guildID } = req.params
+    const prefix = await commandPrefixSchema.findOne({ _id: guildID })
+    return prefix ? res.send(prefix) : res.status(404).send({ msg: 'Not Found' })
+})
 
 router.get('/guilds', async (req, res) => {
     const guilds = await getBotGuilds()
@@ -15,6 +22,22 @@ router.get('/guilds', async (req, res) => {
     } else {
         return res.status(401).send({ msg: 'Unauthorized' })
     }
+})
+
+router.put('/guilds/:guildID/prefix', async (req, res) => {
+    const { prefix } = req.body
+    console.log(prefix)
+    const { guildID } = req.params
+    if(!prefix) return res.status(400).send({ msg: 'Prefix Required' })
+    const update = await commandPrefixSchema.findOneAndUpdate({
+        _id: guildID
+    },{
+        prefix
+    }, {
+        upsert: true,
+        new: true
+    }).exec()
+    return update ? res.send(update) : res.status(400).send({ msg: 'Could not find database document' })
 })
 
 module.exports = router

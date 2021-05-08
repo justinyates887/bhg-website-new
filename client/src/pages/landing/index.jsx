@@ -1,27 +1,11 @@
 import React from 'react'
 import { Button } from '@chakra-ui/react'
-import { getUserDetails } from '../../utils/api'
 
-export function Landing({
-    history,
-}){
-    const [user, setUser] = React.useState(null)
-    const [loading, setLoading] = React.useState(true)
-
-    React.useEffect( () => {
-        getUserDetails()
-        .then(( {data} ) => {
-            setUser(data)
-            setLoading(false)
-        }).catch((err) => {
-            history.push('/')
-            setLoading(false)
-        })
-    }, [])
+export function Landing(props){
 
     const login = () => window.location.href = 'http://localhost:8080/api/auth/discord'
 
-    return !loading && (
+    return (
         <div>
             <nav>
                 <div className="nav-wrapper blue accent-3">
@@ -57,6 +41,7 @@ export function Landing({
                         <a 
                         href="https://discord.com/api/oauth2/authorize?client_id=794674548875460649&permissions=8&scope=bot"
                         target="_blank" 
+                        rel="noreferrer"
                         className="waves-effect blue darken-3 btn-large center-align z-depth-5 pulse">Invite Now!
                         </a>
                     </div>

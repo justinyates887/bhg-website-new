@@ -13,7 +13,7 @@ const app = express();
 
 const PORT = process.env.PORT || 8081;
 
-app.use(express.urlencoded({ extended: true }));
+app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(express.static("public"));
 
@@ -50,7 +50,8 @@ mongoose.connection
 
 app.use(cors({
     origin: ['http://localhost:3000'],
-    credientials: true
+    methods: ["GET", "POST", "PUT"],
+    credentials: true
 }))
 
 app.use(session({

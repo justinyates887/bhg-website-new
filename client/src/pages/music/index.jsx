@@ -34,7 +34,8 @@ export function Music(props){
                     <div className="col center-align offset-m5">
                         <a 
                         href="https://discord.com/oauth2/authorize?client_id=799358906479411281&scope=bot"
-                        target="_blank" 
+                        target="_blank"
+                        rel="noreferrer"
                         className="waves-effect blue darken-3 btn-large center-align z-depth-5">Invite Now!
                         </a>
                     </div>
