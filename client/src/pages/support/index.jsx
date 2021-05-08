@@ -1,5 +1,4 @@
 import React from 'react'
-import { getUserDetails } from '../../utils/api'
 
 export function Support(props){
 
@@ -35,7 +34,8 @@ export function Support(props){
                     <div className="col center-align offset-m5">
                         <a 
                         href="https://discord.gg/FqbRWkgfcT"
-                        target="_blank" 
+                        target="_blank"
+                        rel="noreferrer"
                         className="waves-effect blue darken-3 btn-large center-align z-depth-5">Join The Server!
                         </a>
                     </div>

@@ -7,12 +7,18 @@ export function MenuComponent({
     return (
         <div>
             <h1>Menu Component</h1>
-            {guilds.map((guild) => {
-                <div>
-                    <li>{ guild.name }</li>
-                    <Link to={ `/dashboard/${guild.id}` }></Link>
+            {guilds.map((guild) => (
+                <div className="row">
+                    <div className="col s12 m6">
+                        <div className="card white-text grey darken-2">
+                            <li className="card-title">{ guild.name }</li>
+                            <div className="card-action">
+                                <Link to={ `/dashboard/${guild.id}` }>Dashboard</Link>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            })}
+            ))}
         </div>
     )
 }
