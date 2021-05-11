@@ -34,7 +34,7 @@
 
 ## <a name="Description"></a>Description
 
-**This is an upgraded website for The BLue Haired Girl Discord bot. The goal with this website is to:**
+**This is an upgraded website for The Blue Haired Girl Discord bot. The goal with this website is to:**
 
 1) Allow for users to custmize their bots settings from a UI instead of using commands from their Discord server.
 
