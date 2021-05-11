@@ -1,5 +1,6 @@
 import React from 'react'
 import { getUserDetails } from '../../utils/api'
+import { NavHeader } from '../../components/index'
 
 export function Payment({
     history,
@@ -20,6 +21,7 @@ export function Payment({
 
     return !loading && (
         <div>
+            <NavHeader />
             <h1>Payment</h1>
         </div>
     )

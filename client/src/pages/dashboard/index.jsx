@@ -2,6 +2,7 @@ import React from 'react'
 import { getGuildPrefix, getUserDetails } from '../../utils/api'
 import { DashboardMenu } from '../../components'
 import { updateGuildPrefix } from '../../utils/api'
+import { NavHeader } from '../../components/index'
 
 export function Dashboard({
     history,
@@ -36,6 +37,7 @@ export function Dashboard({
 
     return !loading && (
         <div>
+            <NavHeader />
             <h1 className="h1 white-text">{ user.username }'s Dashboard</h1>
             <DashboardMenu user={user} prefix={prefix} updatePrefix={updateGuildPrefixParent}/>
         </div>

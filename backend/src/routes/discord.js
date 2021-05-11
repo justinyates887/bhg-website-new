@@ -26,13 +26,12 @@ router.get('/guilds', async (req, res) => {
 
 router.put('/guilds/:guildID/prefix', async (req, res) => {
     const { prefix } = req.body
-    console.log(prefix)
     const { guildID } = req.params
     if(!prefix) return res.status(400).send({ msg: 'Prefix Required' })
     const update = await commandPrefixSchema.findOneAndUpdate({
         _id: guildID
     },{
-        prefix
+        prefix: prefix.prefix
     }, {
         upsert: true,
         new: true
