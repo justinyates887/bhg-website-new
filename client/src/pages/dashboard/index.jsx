@@ -38,7 +38,7 @@ export function Dashboard({
     }
 
     const updateDefaultRoleParent = async (roleID) => {
-        updateDefaultRole(null, null)
+        updateDefaultRole(match.params.id, roleID)
     }
 
     return !loading && (
