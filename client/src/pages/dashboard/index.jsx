@@ -1,7 +1,9 @@
 import React from 'react'
 import { getGuildPrefix, getGuildRoles, getUserDetails } from '../../utils/api'
 import { DashboardMenu } from '../../components'
+import { NavHeader } from '../../components/index'
 import { updateGuildPrefix, updateDefaultRole } from '../../utils/api'
+
 
 export function Dashboard({
     history,
@@ -43,6 +45,7 @@ export function Dashboard({
 
     return !loading && (
         <div>
+            <NavHeader />
             <h1 className="h1 white-text">{ user.username }'s Dashboard</h1>
             <DashboardMenu 
                 user={user} 

@@ -1,22 +1,11 @@
 import React from 'react'
+import { NavHeader } from '../../components/index'
 
 export function Faq(props){
 
     return (
         <div>
-            <nav>
-                <div className="nav-wrapper blue accent-3">
-                <a href="../assets/images/BHG.png" className="brand-logo circle responsive-img"><img src="../assets/images/BHG.png" alt="brand-logo" wdith="60" height="60"/></a>
-                <ul id="nav-mobile" className="right hide-on-med-and-down">
-                    <li><a href="/">Home</a></li>
-                    <li><a href="/commands">Commands</a></li>
-                    <li><a href="/support">Support</a></li>
-                    <li><a href="/faq">FAQ</a></li>
-                    <li><a href="/music">Music</a></li>
-                    <li><a href="/auth/discord">Login</a></li>
-                </ul>
-                </div>
-            </nav>
+            <NavHeader />
 
             <div className="container">
 

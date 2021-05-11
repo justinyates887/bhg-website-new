@@ -32,7 +32,7 @@ router.put('/guilds/:guildID/prefix', async (req, res) => {
     const update = await commandPrefixSchema.findOneAndUpdate({
         _id: guildID
     },{
-        prefix
+        prefix: prefix.prefix
     }, {
         upsert: true,
         new: true
