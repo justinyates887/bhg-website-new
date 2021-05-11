@@ -11,7 +11,6 @@ export function DashboardMenu({
     updatePrefix,
     updateRole
 }) {
-    console.log(roles)
     return (
         <div className="row">
             <React.Fragment>
@@ -28,9 +27,7 @@ export function DashboardMenu({
                                 (props) => (
                                     <form onSubmit={props.handleSubmit}>
                                         <Input type="text" name="prefix" onChange={props.handleChange} defaultValue={prefix} />
-                                        <div className="card-action">
-                                            <Button type="submit" children="Update Prefix" className="btn blue"/>
-                                        </div>
+                                        <Button type="submit" children="Update Prefix" className="btn blue"/>
                                     </form>
                                 )
                             }
@@ -43,14 +40,15 @@ export function DashboardMenu({
                     <div className="card white-text grey darken-2">
                         <span className="card-title">Base Member Role</span>
                         <Formik
-                                initialValues={{ defaultRole: '' }}
-                                onSubmit={(values) => { updateRole(values) }}
+                                className="card-content input-field"
+                                initialValues={{ defaultRole: '@everyone' }}
+                                onSubmit={(values) => { 
+                                    updateRole(values) 
+                                }}
                             >
                                 {
                                     (props) => (
-                                        <div>
                                         <form onSubmit={props.handleSubmit}>
-                                            <div className="input-field col">
                                                 <Select name="defaultRole" 
                                                         variant="flushed"
                                                         onChange={props.handleChange}
@@ -59,12 +57,9 @@ export function DashboardMenu({
                                                         <option value={role.id} key={role.id}>{role.name}</option>
                                                     ))}
                                                 </Select>
-                                            </div>
+                                                <Button type="submit" children="Update Role" className="btn blue" />
                                         </form>
-                                        <div className="card-action">
-                                            <Button type="submit" children="Update Role" className="btn blue" />
-                                        </div>
-                                        </div>
+
                                     )
                                 }
                         </Formik>
