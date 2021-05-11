@@ -13,7 +13,7 @@ export function NavHeader({
             <li><a href="/support">Support</a></li>
             <li><a href="/faq">FAQ</a></li>
             <li><a href="/music">Music</a></li>
-            <li><a href="/auth/discord">Login</a></li>
+            <li><a href="localhost:8080/auth/discord">Login</a></li>
         </ul>
         </div>
     </nav>
