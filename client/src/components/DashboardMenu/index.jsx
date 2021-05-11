@@ -11,6 +11,7 @@ export function DashboardMenu({
     updatePrefix,
     updateRole
 }) {
+    console.log(roles)
     return (
         <div className="row">
             <React.Fragment>
@@ -27,7 +28,9 @@ export function DashboardMenu({
                                 (props) => (
                                     <form onSubmit={props.handleSubmit}>
                                         <Input type="text" name="prefix" onChange={props.handleChange} defaultValue={prefix} />
-                                        <Button type="submit" children="Update Prefix" className="btn blue"/>
+                                        <div className="card-action">
+                                            <Button type="submit" children="Update Prefix" className="btn blue"/>
+                                        </div>
                                     </form>
                                 )
                             }
@@ -40,22 +43,28 @@ export function DashboardMenu({
                     <div className="card white-text grey darken-2">
                         <span className="card-title">Base Member Role</span>
                         <Formik
-                                initialValues={{ defaultRole: "" }}
+                                initialValues={{ defaultRole: '' }}
                                 onSubmit={(values) => { updateRole(values) }}
                             >
                                 {
                                     (props) => (
+                                        <div>
                                         <form onSubmit={props.handleSubmit}>
-                                            <Select name="defaultRole" 
-                                                    variant="flushed"
-                                                    onChange={props.handleChange}
-                                            >
-                                                {roles.map((role) => (
-                                                    <option value={role.id} key={role.id}>{role.name}</option>
-                                                ))}
-                                            </Select>
-                                            <Button type="submit" children="Update Role" className="btn blue" />
+                                            <div className="input-field col">
+                                                <Select name="defaultRole" 
+                                                        variant="flushed"
+                                                        onChange={props.handleChange}
+                                                >
+                                                    {roles.map((role) => (
+                                                        <option value={role.id} key={role.id}>{role.name}</option>
+                                                    ))}
+                                                </Select>
+                                            </div>
                                         </form>
+                                        <div className="card-action">
+                                            <Button type="submit" children="Update Role" className="btn blue" />
+                                        </div>
+                                        </div>
                                     )
                                 }
                         </Formik>

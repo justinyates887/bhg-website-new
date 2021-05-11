@@ -8,7 +8,7 @@ const guildRolesSchema = require('../db/schemas/guild-roles')
 router.get('/guilds/:guildID/prefixConfig', async (req, res) => {
     const { guildID } = req.params
     const prefix = await commandPrefixSchema.findOne({ _id: guildID })
-    return prefix ? res.send(prefix) : res.status(404).send({ msg: 'Not Found' })
+    return prefix ? res.send(prefix) : res.send({ prefix: 'b!' })
 })
 
 router.get('/guilds', async (req, res) => {
