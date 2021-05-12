@@ -1,5 +1,5 @@
 import React from 'react'
-import { getGuildPrefix, getGuildRoles, getUserDetails, getGuildChannels } from '../../utils/api'
+import { getGuildPrefix, getGuildRoles, getUserDetails, getGuildChannels, getGuildBlacklist } from '../../utils/api'
 import { DashboardMenu } from '../../components'
 import { NavHeader } from '../../components/index'
 import { updateGuildPrefix, 
@@ -10,9 +10,9 @@ import { updateGuildPrefix,
     updateTicketsChannel,
     updateSuggestionChannel,
     updateApprovedSuggestionChannel,
-    updateAntiad
+    updateAntiad,
+    updateBlacklist
 } from '../../utils/api'
-
 
 export function Dashboard({
     history,
@@ -23,6 +23,7 @@ export function Dashboard({
     const [prefix, setPrefix] = React.useState({})
     const [roles, setRoles] = React.useState([])
     const [channels, setChannels] = React.useState([])
+    const [blacklist, setBlacklist] = React.useState([])
 
     React.useEffect( () => {
         getUserDetails()
@@ -37,6 +38,9 @@ export function Dashboard({
             return getGuildChannels(match.params.id)
         }).then(({ data }) => {
             setChannels(data)
+            return getGuildBlacklist(match.params.id)
+        }).then(({ data }) => {
+            setBlacklist(data.words)
             setLoading(false)
         }).catch((err) => {
             history.push('/api/discord/auth')
@@ -84,6 +88,10 @@ export function Dashboard({
         updateAntiad(match.params.id, desired)
     }
 
+    const updateBlacklistParent = async (words) => {
+        updateBlacklist(match.params.id, words)
+    }
+
     return !loading && (
         <div>
             <NavHeader />
@@ -102,6 +110,8 @@ export function Dashboard({
                 updateSuggestionChannel={updateSuggestionChannelParent}
                 updateApprovedSuggestionChannel={updateApprovedSuggestionChannelParent}
                 updateAntiad={updateAntiadParent}
+                updateBlacklist={updateBlacklistParent}
+                blacklist={blacklist}
             />
         </div>
     )

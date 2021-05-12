@@ -11,6 +11,7 @@ const logsChannelSchema = require('../db/schemas/logs')
 const ticketsCategorySchema = require('../db/schemas/tickets')
 const suggestChannelsSchema = require('../db/schemas/suggest')
 const antiAdSchema = require('../db/schemas/antiad')
+const blacklistSchema = require('../db/schemas/blacklist')
 
 router.get('/guilds', async (req, res) => {
     const guilds = await getBotGuilds()
@@ -31,7 +32,7 @@ router.get('/guilds/:guildID/prefixConfig', async (req, res) => {
     const { guildID } = req.params
     const prefix = await commandPrefixSchema.findOne({ _id: guildID })
     return prefix ? res.send(prefix) : res.send({ prefix: 'b!' })
-})
+}) 
 
 router.put('/guilds/:guildID/prefix', async (req, res) => {
     const { prefix } = req.body
@@ -219,6 +220,34 @@ router.put('/guilds/:guildID/antiad', async (req, res) => {
             _id: guildID
         }, {
             desired
+        },{
+            upsert: true,
+            new: true
+        }).exec()
+        return update ? res.send(update) : res.status(400).send({ msg: "Bad Request" })
+    }catch(err){
+        console.log(err)
+        res.status(500).send({ msg: "Internal Server Error" })
+    }
+})
+
+router.get('/guilds/:guildID/blacklist-config', async (req, res) => {
+    const { guildID } = req.params
+    const blacklist = await blacklistSchema.findOne({ _id: guildID })
+    return blacklist ? res.send(blacklist) : res.send([])
+}) 
+
+router.put('/guilds/:guildID/blacklist', async (req, res) => {
+    const { words } = req.body
+    if(!words) return res.status(400).send({ msg: "Bad Request" })
+    const { guildID } = req.params;
+    try{
+        const update = await blacklistSchema.findOneAndUpdate({
+            _id: guildID
+        }, {
+            $push: {
+                words
+            }
         },{
             upsert: true,
             new: true

@@ -25,7 +25,9 @@ export function DashboardMenu({
     updateTicketsChannel,
     updateSuggestionChannel,
     updateApprovedSuggestionChannel,
-    updateAntiad
+    updateAntiad,
+    blacklist,
+    updateBlacklist
 }) {
     return (
         <div>
@@ -61,6 +63,9 @@ export function DashboardMenu({
                 <div className="col sm-12 m-6">
                     <AntiadDashboard updateAntiad={updateAntiad} />
                 </div>
+            </div>
+            <div className="row">
+                <UpdateBlacklist updateBlacklist={updateBlacklist} blacklist={blacklist} />
             </div>
         </div>
     )

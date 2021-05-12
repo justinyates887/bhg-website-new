@@ -128,3 +128,22 @@ export function updateAntiad(guildID, desired) {
         }
     )
 }
+
+export function getGuildBlacklist(guildID) {
+    return axios.get(
+        `http://localhost:8080/api/discord/guilds/${guildID}/blacklist-config`, {
+        withCredentials: true
+    }).catch((err) => {
+        console.log(err)
+    })
+}
+
+export function updateBlacklist(guildID, words) {
+    return axios.put(
+        `http://localhost:8080/api/discord/guilds/${guildID}/blacklist`, {
+            words
+        }, {
+            withCredentials: true
+        }
+    )
+}
