@@ -1,0 +1,6 @@
+export { DefaultRoleDashboard } from './defaultRole'
+export { PrefixDashboard } from './prefix'
+export { MuteRoleDashboard } from './muteRole'
+export { LogsChannelDashboard } from './logsChannel'
+export { TicketsChannelDashboard } from './ticketsChannel'
+export { WelcomeChannelDashboard } from './welcomeChannel'

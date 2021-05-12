@@ -33,6 +33,14 @@ export function updateGuildPrefix(guildID, prefix) {
     )
 }
 
+export function getGuildRoles(guildID) {
+    return axios.get(
+        `http://localhost:8080/api/discord/guilds/${guildID}/roles`, {
+            withCredentials: true
+        }
+    )
+}
+
 export function updateDefaultRole(guildID, roleID) {
     return axios.put(
         `http://localhost:8080/api/discord/guilds/${guildID}/roles/default`, {
@@ -43,9 +51,49 @@ export function updateDefaultRole(guildID, roleID) {
     )
 }
 
-export function getGuildRoles(guildID) {
+export function updateMuteRole(guildID, roleID) {
+    return axios.put(
+        `http://localhost:8080/api/discord/guilds/${guildID}/roles/mute`, {
+            roleID
+        }, {
+            withCredentials: true
+        }
+    )
+}
+
+export function getGuildChannels(guildID) {
     return axios.get(
-        `http://localhost:8080/api/discord/guilds/${guildID}/roles`, {
+        `http://localhost:8080/api/discord/guilds/${guildID}/channels`, {
+            withCredentials: true
+        }
+    )
+}
+
+export function updateWelcomeChannel(guildID, channelID) {
+    return axios.put(
+        `http://localhost:8080/api/discord/guilds/${guildID}/channels/welcome`, {
+            channelID
+        }, {
+            withCredentials: true
+        }
+    )
+}
+
+export function updateLogsChannel(guildID, channelID) {
+    return axios.put(
+        `http://localhost:8080/api/discord/guilds/${guildID}/channels/logs`, {
+            channelID
+        }, {
+            withCredentials: true
+        }
+    )
+}
+
+export function updateTicketsChannel(guildID, channelID) {
+    return axios.put(
+        `http://localhost:8080/api/discord/guilds/${guildID}/channels/tickets`, {
+            channelID
+        }, {
             withCredentials: true
         }
     )

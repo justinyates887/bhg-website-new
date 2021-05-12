@@ -2,36 +2,35 @@ import React from 'react'
 import { Formik } from 'formik'
 import { Button, Select } from '@chakra-ui/react'
 
-export function DefaultRoleDashboard({
-    roles,
-    updateDefaultRole
+export function TicketsChannelDashboard({
+    channels,
+    updateTicketsChannel
 }){
     return(
         
         <React.Fragment>
             <div className="card white-text grey darken-2">
-                <span className="card-title">Base Member Role</span>
+                <span className="card-title">Tickets Channel</span>
                 <Formik
                         className="card-content input-field"
-                        initialValues={{ defaultRole: '@everyone' }}
+                        initialValues={{ ticketsChannel: '' }}
                         onSubmit={(values) => { 
-                            updateDefaultRole(values) 
+                            updateTicketsChannel(values) 
                         }}
                     >
                         {
                             (props) => (
                                 <form onSubmit={props.handleSubmit}>
-                                        <Select name="defaultRole" 
+                                        <Select name="ticketsChannel" 
                                                 variant="flushed"
                                                 onChange={props.handleChange}
                                         >
-                                            {roles.map((role) => (
-                                                <option value={role.id} key={role.id}>{role.name}</option>
+                                            {channels.map((channel) => (
+                                                <option value={channel.id} key={channel.id}>{channel.name}</option>
                                             ))}
                                         </Select>
-                                        <Button type="submit" children="Update Role" className="btn blue" />
+                                        <Button type="submit" children="Update Channel" className="btn blue" />
                                 </form>
-
                             )
                         }
                 </Formik>

@@ -1,71 +1,44 @@
 import React from 'react'
-import { Formik } from 'formik'
-import { Input, Button, Select } from '@chakra-ui/react'
+import { DefaultRoleDashboard, PrefixDashboard, MuteRoleDashboard, WelcomeChannelDashboard, LogsChannelDashboard, TicketsChannelDashboard } from './subcomponents'
 
 export function DashboardMenu({
     history,
     guildID,
     user,
     roles,
+    channels,
     prefix,
     updatePrefix,
-    updateRole
+    updateDefaultRole,
+    updateMuteRole,
+    updateWelcomeChannel,
+    updateLogsChannel,
+    updateTicketsChannel
 }) {
     return (
-        <div className="row">
-            <React.Fragment>
+        <div>
+            <div className="row">
                 <div className="col sm-12 m-6">
-                    <div className="card white-text grey darken-2">
-                        <span className="card-title">Prefix</span>
-                        <Formik
-                            initialValues={{ prefix }}
-                            onSubmit={(values) => {
-                                updatePrefix(values)
-                            }}
-                        >
-                            {
-                                (props) => (
-                                    <form onSubmit={props.handleSubmit}>
-                                        <Input type="text" name="prefix" onChange={props.handleChange} defaultValue={prefix} />
-                                        <Button type="submit" children="Update Prefix" className="btn blue"/>
-                                    </form>
-                                )
-                            }
-                        </Formik>
-                    </div>
+                    <PrefixDashboard prefix={prefix} updatePrefix={updatePrefix} />
                 </div>
-            </React.Fragment>
-            <React.Fragment>
                 <div className="col sm-12 m-6">
-                    <div className="card white-text grey darken-2">
-                        <span className="card-title">Base Member Role</span>
-                        <Formik
-                                className="card-content input-field"
-                                initialValues={{ defaultRole: '@everyone' }}
-                                onSubmit={(values) => { 
-                                    updateRole(values) 
-                                }}
-                            >
-                                {
-                                    (props) => (
-                                        <form onSubmit={props.handleSubmit}>
-                                                <Select name="defaultRole" 
-                                                        variant="flushed"
-                                                        onChange={props.handleChange}
-                                                >
-                                                    {roles.map((role) => (
-                                                        <option value={role.id} key={role.id}>{role.name}</option>
-                                                    ))}
-                                                </Select>
-                                                <Button type="submit" children="Update Role" className="btn blue" />
-                                        </form>
-
-                                    )
-                                }
-                        </Formik>
-                    </div>
+                    <DefaultRoleDashboard roles={roles} updateDefaultRole={updateDefaultRole} />
                 </div>
-            </React.Fragment>
+                <div className="col sm-12 m-6">
+                    <MuteRoleDashboard roles={roles} updateMuteRole={updateMuteRole} />
+                </div>
+            </div>
+            <div className="row">
+                <div className="col sm-12 m-6">
+                    <WelcomeChannelDashboard channels={channels} updateWelcomeChannel={updateWelcomeChannel} />
+                </div>
+                <div className="col sm-12 m-6">
+                    <LogsChannelDashboard channels={channels} updateLogsChannel={updateLogsChannel} />
+                </div>
+                <div className="col sm-12 m-6">
+                    <TicketsChannelDashboard channels={channels} updateTicketsChannel={updateTicketsChannel} />
+                </div>
+            </div>
         </div>
     )
 }

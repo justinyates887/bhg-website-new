@@ -2,20 +2,20 @@ import React from 'react'
 import { Formik } from 'formik'
 import { Button, Select } from '@chakra-ui/react'
 
-export function DefaultRoleDashboard({
+export function MuteRoleDashboard({
     roles,
-    updateDefaultRole
+    updateMuteRole
 }){
     return(
         
         <React.Fragment>
             <div className="card white-text grey darken-2">
-                <span className="card-title">Base Member Role</span>
+                <span className="card-title">Muted Member Role</span>
                 <Formik
                         className="card-content input-field"
-                        initialValues={{ defaultRole: '@everyone' }}
+                        initialValues={{ muteRole: '@everyone' }}
                         onSubmit={(values) => { 
-                            updateDefaultRole(values) 
+                            updateMuteRole(values) 
                         }}
                     >
                         {
