@@ -1,5 +1,13 @@
 import React from 'react'
-import { DefaultRoleDashboard, PrefixDashboard, MuteRoleDashboard, WelcomeChannelDashboard, LogsChannelDashboard, TicketsChannelDashboard } from './subcomponents'
+import { DefaultRoleDashboard, 
+    PrefixDashboard, 
+    MuteRoleDashboard, 
+    WelcomeChannelDashboard, 
+    LogsChannelDashboard, 
+    TicketsChannelDashboard,
+    SuggestionChannelDashboard,
+    ApprovedSuggestionChannelDashboard
+} from './subcomponents'
 
 export function DashboardMenu({
     history,
@@ -13,7 +21,9 @@ export function DashboardMenu({
     updateMuteRole,
     updateWelcomeChannel,
     updateLogsChannel,
-    updateTicketsChannel
+    updateTicketsChannel,
+    updateSuggestionChannel,
+    updateApprovedSuggestionChannel
 }) {
     return (
         <div>
@@ -37,6 +47,14 @@ export function DashboardMenu({
                 </div>
                 <div className="col sm-12 m-6">
                     <TicketsChannelDashboard channels={channels} updateTicketsChannel={updateTicketsChannel} />
+                </div>
+            </div>
+            <div className="row">
+                <div className="col sm-12 m-6">
+                    <SuggestionChannelDashboard channels={channels} updateSuggestionChannel={updateSuggestionChannel} />
+                </div>
+                <div className="col sm-12 m-6">
+                    <ApprovedSuggestionChannelDashboard channels={channels} updateApprovedSuggestionChannel={updateApprovedSuggestionChannel} />
                 </div>
             </div>
         </div>

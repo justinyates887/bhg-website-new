@@ -8,6 +8,7 @@ const guildRolesSchema = require('../db/schemas/guild-roles')
 const welcomeChannelSchema = require('../db/schemas/welcome-channel')
 const logsChannelSchema = require('../db/schemas/logs')
 const ticketsCategorySchema = require('../db/schemas/tickets')
+const suggestChannelsSchema = require('../db/schemas/suggest')
 
 router.get('/guilds', async (req, res) => {
     const guilds = await getBotGuilds()
@@ -165,6 +166,47 @@ router.put('/guilds/:guildID/channels/tickets', async (req, res) => {
         res.status(500).send({ msg: "Internal Server Error" })
     }
 })
+
+router.put('/guilds/:guildID/channels/suggestion', async (req, res) => {
+    const { channelID } = req.body
+    if(!channelID) return res.status(400).send({ msg: "Bad Request" })
+    const { guildID } = req.params;
+    try{
+        const update = await suggestChannelsSchema.findOneAndUpdate({
+            _id: guildID
+        }, {
+            cID: channelID
+        },{
+            upsert: true,
+            new: true
+        }).exec()
+        return update ? res.send(update) : res.status(400).send({ msg: "Bad Request" })
+    }catch(err){
+        console.log(err)
+        res.status(500).send({ msg: "Internal Server Error" })
+    }
+})
+
+router.put('/guilds/:guildID/channels/approved-suggestion', async (req, res) => {
+    const { channelID } = req.body
+    if(!channelID) return res.status(400).send({ msg: "Bad Request" })
+    const { guildID } = req.params;
+    try{
+        const update = await suggestChannelsSchema.findOneAndUpdate({
+            _id: guildID
+        }, {
+            aCID: channelID
+        },{
+            upsert: true,
+            new: true
+        }).exec()
+        return update ? res.send(update) : res.status(400).send({ msg: "Bad Request" })
+    }catch(err){
+        console.log(err)
+        res.status(500).send({ msg: "Internal Server Error" })
+    }
+})
+
 
 
 module.exports = router

@@ -2,7 +2,15 @@ import React from 'react'
 import { getGuildPrefix, getGuildRoles, getUserDetails, getGuildChannels } from '../../utils/api'
 import { DashboardMenu } from '../../components'
 import { NavHeader } from '../../components/index'
-import { updateGuildPrefix, updateDefaultRole, updateMuteRole, updateWelcomeChannel, updateLogsChannel, updateTicketsChannel } from '../../utils/api'
+import { updateGuildPrefix, 
+    updateDefaultRole, 
+    updateMuteRole, 
+    updateWelcomeChannel, 
+    updateLogsChannel, 
+    updateTicketsChannel,
+    updateSuggestionChannel,
+    updateApprovedSuggestionChannel 
+} from '../../utils/api'
 
 
 export function Dashboard({
@@ -63,6 +71,14 @@ export function Dashboard({
         updateTicketsChannel(match.params.id, channelID)
     }
 
+    const updateSuggestionChannelParent = async (channelID) => {
+        updateSuggestionChannel(match.params.id, channelID)
+    }
+
+    const updateApprovedSuggestionChannelParent = async (channelID) => {
+        updateApprovedSuggestionChannel(match.params.id, channelID)
+    }
+
     return !loading && (
         <div>
             <NavHeader />
@@ -78,6 +94,8 @@ export function Dashboard({
                 updateWelcomeChannel={updateWelcomeChannelParent}
                 updateLogsChannel={updateLogsChannelParent}
                 updateTicketsChannel={updateTicketsChannelParent}
+                updateSuggestionChannel={updateSuggestionChannelParent}
+                updateApprovedSuggestionChannel={updateApprovedSuggestionChannelParent}
             />
         </div>
     )

@@ -98,3 +98,23 @@ export function updateTicketsChannel(guildID, channelID) {
         }
     )
 }
+
+export function updateSuggestionChannel(guildID, channelID) {
+    return axios.put(
+        `http://localhost:8080/api/discord/guilds/${guildID}/channels/suggestion`, {
+            channelID
+        }, {
+            withCredentials: true
+        }
+    )
+}
+
+export function updateApprovedSuggestionChannel(guildID, channelID) {
+    return axios.put(
+        `http://localhost:8080/api/discord/guilds/${guildID}/channels/approved-suggestion`, {
+            channelID
+        }, {
+            withCredentials: true
+        }
+    )
+}
