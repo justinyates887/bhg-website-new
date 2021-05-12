@@ -1,5 +1,6 @@
 const router = require('express').Router()
-const { getBotGuilds, getGuildRoles, getGuildChannels } = require('../utils/api')
+
+const { getBotGuilds, getGuildRoles, getGuildChannels, getUserGuilds } = require('../utils/api')
 const { getMutualGuilds } = require('../utils/utils')
 
 const User = require('../db/schemas/user')
@@ -16,8 +17,9 @@ router.get('/guilds', async (req, res) => {
     const user = await User.findOne({
         DiscordID: req.user.DiscordID
     })
+
     if(user){
-        const userGuilds = user.get('guilds')
+        const userGuilds = await getUserGuilds(req.user.discordID)
         const mutualGuilds = getMutualGuilds(userGuilds, guilds)
         res.send(mutualGuilds)
     } else {
