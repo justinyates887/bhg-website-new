@@ -118,3 +118,13 @@ export function updateApprovedSuggestionChannel(guildID, channelID) {
         }
     )
 }
+
+export function updateAntiad(guildID, desired) {
+    return axios.put(
+        `http://localhost:8080/api/discord/guilds/${guildID}/antiad`, {
+            desired
+        }, {
+            withCredentials: true
+        }
+    )
+}

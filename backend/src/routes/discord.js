@@ -9,6 +9,7 @@ const welcomeChannelSchema = require('../db/schemas/welcome-channel')
 const logsChannelSchema = require('../db/schemas/logs')
 const ticketsCategorySchema = require('../db/schemas/tickets')
 const suggestChannelsSchema = require('../db/schemas/suggest')
+const antiAdSchema = require('../db/schemas/antiad')
 
 router.get('/guilds', async (req, res) => {
     const guilds = await getBotGuilds()
@@ -196,6 +197,26 @@ router.put('/guilds/:guildID/channels/approved-suggestion', async (req, res) => 
             _id: guildID
         }, {
             aCID: channelID
+        },{
+            upsert: true,
+            new: true
+        }).exec()
+        return update ? res.send(update) : res.status(400).send({ msg: "Bad Request" })
+    }catch(err){
+        console.log(err)
+        res.status(500).send({ msg: "Internal Server Error" })
+    }
+})
+
+router.put('/guilds/:guildID/antiad', async (req, res) => {
+    const { desired } = req.body
+    if(!desired) return res.status(400).send({ msg: "Bad Request" })
+    const { guildID } = req.params;
+    try{
+        const update = await antiAdSchema.findOneAndUpdate({
+            _id: guildID
+        }, {
+            desired
         },{
             upsert: true,
             new: true

@@ -9,7 +9,8 @@ import { updateGuildPrefix,
     updateLogsChannel, 
     updateTicketsChannel,
     updateSuggestionChannel,
-    updateApprovedSuggestionChannel 
+    updateApprovedSuggestionChannel,
+    updateAntiad
 } from '../../utils/api'
 
 
@@ -79,6 +80,10 @@ export function Dashboard({
         updateApprovedSuggestionChannel(match.params.id, channelID)
     }
 
+    const updateAntiadParent = async (desired) => {
+        updateAntiad(match.params.id, desired)
+    }
+
     return !loading && (
         <div>
             <NavHeader />
@@ -96,6 +101,7 @@ export function Dashboard({
                 updateTicketsChannel={updateTicketsChannelParent}
                 updateSuggestionChannel={updateSuggestionChannelParent}
                 updateApprovedSuggestionChannel={updateApprovedSuggestionChannelParent}
+                updateAntiad={updateAntiadParent}
             />
         </div>
     )

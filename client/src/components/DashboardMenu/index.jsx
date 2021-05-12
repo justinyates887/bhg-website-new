@@ -6,7 +6,8 @@ import { DefaultRoleDashboard,
     LogsChannelDashboard, 
     TicketsChannelDashboard,
     SuggestionChannelDashboard,
-    ApprovedSuggestionChannelDashboard
+    ApprovedSuggestionChannelDashboard,
+    AntiadDashboard
 } from './subcomponents'
 
 export function DashboardMenu({
@@ -23,7 +24,8 @@ export function DashboardMenu({
     updateLogsChannel,
     updateTicketsChannel,
     updateSuggestionChannel,
-    updateApprovedSuggestionChannel
+    updateApprovedSuggestionChannel,
+    updateAntiad
 }) {
     return (
         <div>
@@ -55,6 +57,9 @@ export function DashboardMenu({
                 </div>
                 <div className="col sm-12 m-6">
                     <ApprovedSuggestionChannelDashboard channels={channels} updateApprovedSuggestionChannel={updateApprovedSuggestionChannel} />
+                </div>
+                <div className="col sm-12 m-6">
+                    <AntiadDashboard updateAntiad={updateAntiad} />
                 </div>
             </div>
         </div>
