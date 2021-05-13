@@ -1,5 +1,6 @@
 import { Button } from '@chakra-ui/button'
-import { Box, Container, Link, Text, Wrap } from '@chakra-ui/layout'
+import { Link } from 'react-router-dom'
+import { Box, Container, Text, Wrap } from '@chakra-ui/layout'
 import React from 'react'
 import { NavHeader } from '../../components/index'
 import { getUserDetails, getMyGuilds } from '../../utils/api'
@@ -29,14 +30,16 @@ export function Landing({history}){
         <React.Fragment>
             <NavHeader user={user}/>           
             <Container maxW="container.xl">
-                <Box align="center">
-                    <Text color="white"><strong>THE BLUE HAIRED GIRL</strong></Text><br/>
-                    <Text color="white">Serving {botGuilds.length} servers</Text>
-                    <Text color="white">
+                <Box align="center" mt={10}>
+                    <Text color="white" fontSize="6xl"><strong>THE BLUE HAIRED GIRL</strong></Text><br/>
+                    <Text color="white" fontSize="4xl">Serving <strong>{botGuilds.length}</strong> servers</Text>
+                    <br/>
+                    <Text color="white" fontSize="2xl">
                         A Discord bot aimed at reducing bot clutter in servers by offering
-                        <Wrap align="center">
-                            <strong><Text color="blue.500">more</Text></strong> for
-                            <strong><Text color="blue.500">free</Text></strong>
+                        <Wrap align="center" justify="center">
+                            <strong><Text color="blue.500" fontSize="3xl">more</Text></strong> 
+                            <Text>for</Text>
+                            <strong><Text color="blue.500" fontSize="3xl">free</Text></strong>
                         </Wrap>
                     </Text>
                     <Link 

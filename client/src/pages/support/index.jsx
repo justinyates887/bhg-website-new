@@ -1,35 +1,49 @@
 import React from 'react'
 import { NavHeader } from '../../components/index'
+import { Link } from 'react-router-dom'
+import { Box, Container, Text, Wrap } from '@chakra-ui/layout'
+import { Button } from '@chakra-ui/button'
+import { getUserDetails } from '../../utils/api'
 
-export function Support(props){
+export function Support(history){
+
+    const [user, setUser] = React.useState(null)
+    const [loading, setLoading] = React.useState(true)
+
+    React.useEffect( () => {
+        getUserDetails()
+        .then(( {data} ) => {
+            setUser(data)
+            return setLoading(false)
+        }).catch((err) => {
+            console.log(err)
+            history.push('/')
+            setLoading(false)
+        })
+    }, [])
 
     return (
-        <div>
-            <NavHeader />
-
-            <div className="container">
-
-                <div className="row valign-wrapper">
-                    <div className="col-4">
-                        <h1 className="center-align blue-text darken-3" id="mainHead"><strong>NEED HELP?</strong></h1><br/>
-                        <h4 className="center-align white-text" id="desc">
-                        Join our <strong><span className="blue-text darken-3">support server</span></strong> to talk to the devs, make suggestions, and be
-                            <strong><span className="blue-text darken-3">informed</span></strong> about all of the updates.
-                        </h4>
-                    </div>
-                </div>
-
-                <div className="row">
-                    <div className="col center-align offset-m5">
-                        <a 
-                        href="https://discord.gg/FqbRWkgfcT"
-                        target="_blank"
-                        rel="noreferrer"
-                        className="waves-effect blue darken-3 btn-large center-align z-depth-5">Join The Server!
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <React.Fragment>
+        <NavHeader user={user}/>           
+            <Container maxW="container.xl">
+                <Box align="center" mt={10}>
+                    <Text color="white" fontSize="5xl"><strong>Need Help?</strong></Text><br/>
+                    <Text color="white" fontSize="2xl">
+                        Join our
+                        <Wrap align="center" justify="center">
+                            <strong><Text color="blue.500" fontSize="3xl">support server</Text></strong> 
+                            <Text>to talk to the devs, make suggestions, and be</Text>
+                            <strong><Text color="blue.500" fontSize="3xl">informed</Text></strong>
+                        </Wrap>
+                        about all of the updates.
+                    </Text>
+                    <Link 
+                    to={"https://discord.gg/FqbRWkgfcT"}
+                    target="_blank" 
+                    ><Button colorScheme="blue" p={4} m={4} >Join The Server</Button>
+                    </Link>
+                </Box>
+            </Container>
+        </React.Fragment>
     )
 }

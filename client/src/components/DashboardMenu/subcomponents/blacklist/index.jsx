@@ -6,6 +6,20 @@ export function BlacklistDashboard({
     updateBlacklist,
     blacklist
 }){
+    function returnTag(blacklist){
+        if(blacklist){
+            return (
+                <HStack spacing={4} ml={4} mr={4}>
+                    {blacklist.map((word) => (
+                        <Tag value={word} key={word} size={"md"} borderRadius="full" variant="solid" colorScheme="blue">
+                            <TagLabel>{word}</TagLabel>
+                            <TagCloseButton />
+                        </Tag>
+                    ))}
+                </HStack>
+            )
+        }
+    }
     return(
         
         <React.Fragment>
@@ -19,14 +33,7 @@ export function BlacklistDashboard({
                     {
                         (props) => (
                             <form onSubmit={props.handleSubmit}>
-                                <HStack spacing={4} ml={4} mr={4}>
-                                    {blacklist.map((word) => (
-                                        <Tag value={word} key={word} size={"md"} borderRadius="full" variant="solid" colorScheme="blue">
-                                            <TagLabel>{word}</TagLabel>
-                                            <TagCloseButton />
-                                        </Tag>
-                                    ))}
-                                </HStack>
+                                {returnTag(blacklist)}
                                 <Input 
                                     type="text" name="word" onChange={props.handleChange} 
                                     maxWidth="1200" align="center" color="white" ml={5}
