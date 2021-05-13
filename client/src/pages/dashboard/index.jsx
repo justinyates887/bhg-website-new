@@ -13,7 +13,7 @@ import { updateGuildPrefix,
     updateAntiad,
     updateBlacklist
 } from '../../utils/api'
-import { Container, Text } from '@chakra-ui/react'
+import { Container, Text, Wrap, Avatar, Center } from '@chakra-ui/react'
 export function Dashboard({
     history,
     match
@@ -24,6 +24,7 @@ export function Dashboard({
     const [roles, setRoles] = React.useState([])
     const [channels, setChannels] = React.useState([])
     const [blacklist, setBlacklist] = React.useState([])
+    const [userGuilds, setUserGuilds] = React.useState([])
 
     React.useEffect( () => {
         getUserDetails()
@@ -41,6 +42,9 @@ export function Dashboard({
             return getGuildBlacklist(match.params.id)
         }).then(({ data }) => {
             setBlacklist(data.words)
+            return getGuilds()
+        }).then(({ data }) => {
+            setUserGuilds(data)
             setLoading(false)
         }).catch((err) => {
             history.push('/api/discord/auth')
@@ -92,11 +96,42 @@ export function Dashboard({
         updateBlacklist(match.params.id, words)
     }
 
+    function thisGuild(){
+        const guilds = []
+        for(let i = 0; i < userGuilds.excluded.length; i++){
+            guilds.push(userGuilds.excluded[i])
+        }
+        for(let i = 0; i < userGuilds.included.length; i++){
+            guilds.push(userGuilds.included[i])
+        }
+
+        const guild = guilds.filter(guild => match.params.id === guild.id)
+        return guild[0]
+    }
+
+    function guildIcon(guild){
+        if(guild.icon){
+            const string = `https://cdn.discordapp.com/icons/${guild.id}/${guild.icon}.png`
+            return(
+                <Avatar src={string} size="lg" name={guild.name} bg="gray.600"/>
+            )
+        } else{
+            return (
+                <Avatar src="" size="lg" name={guild.name} bg="gray.600"/>
+            )
+        }
+    }
+
     return !loading && (
         <div>
             <NavHeader user={user}/>
             <Container  maxW="container.xl">
-                <Text fontSize="3xl" color="white" align="center" p={3}>{ user.username }'s Dashboard</Text>
+                <Center>
+                <Wrap align="center" p={2}>
+                    {guildIcon(thisGuild())}
+                    <Text fontSize="3xl" color="white" p={3}>{ thisGuild().name } Dashboard</Text>
+                </Wrap>
+                </Center>
                 <DashboardMenu 
                     user={user} 
                     prefix={prefix}

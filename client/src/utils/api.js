@@ -16,6 +16,12 @@ export function getGuilds() {
     })
 }
 
+export function getMyGuilds(){
+    return axios.get('http://localhost:8080/api/discord/guilds/@me', {
+        withCredentials: true
+    })
+}
+
 export function getGuildPrefix(guildID) {
     return axios.get(`http://localhost:8080/api/discord/guilds/${guildID}/prefixConfig`, {
         withCredentials: true

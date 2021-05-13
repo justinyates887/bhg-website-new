@@ -20,7 +20,6 @@ export function NavHeader({
         if(user){
             if(user.avatar){
                 const string = `https://cdn.discordapp.com/avatars/${user.discordID}/${user.avatar}.png`
-                console.log(string)
                 return(
                     <BreadcrumbLink href="/menu">
                         <Wrap align="center">

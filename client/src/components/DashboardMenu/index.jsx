@@ -29,7 +29,7 @@ export function DashboardMenu({
     updateApprovedSuggestionChannel,
     updateAntiad,
     blacklist,
-    updateBlacklist
+    updateBlacklist,
 }) {
     return (
         <React.Fragment>

@@ -28,6 +28,11 @@ router.get('/guilds', async (req, res) => {
     }
 })
 
+router.get('/guilds/@me', async (req, res) => {
+    const guilds = await getBotGuilds()
+    res.send(guilds)
+})
+
 router.get('/guilds/:guildID/prefixConfig', async (req, res) => {
     const { guildID } = req.params
     const prefix = await commandPrefixSchema.findOne({ _id: guildID })
