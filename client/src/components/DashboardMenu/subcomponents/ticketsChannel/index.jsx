@@ -23,11 +23,12 @@ export function TicketsChannelDashboard({
                                 <form onSubmit={props.handleSubmit}>
                                         <Select name="ticketsChannel" 
                                                 variant="flushed"
+                                                placeholder="Select A Category"
                                                 onChange={props.handleChange}
                                         >
-                                            {channels.map((channel) => (
+                                            {channels.filter(channel => channel.type === 4).map((channel => (
                                                 <option value={channel.id} key={channel.id}>{channel.name}</option>
-                                            ))}
+                                            )))}
                                         </Select>
                                         <Button type="submit" children="Update Channel" className="btn blue" />
                                 </form>

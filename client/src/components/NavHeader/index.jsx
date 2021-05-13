@@ -1,21 +1,68 @@
 import React from 'react'
+import {
+    Breadcrumb,
+    BreadcrumbItem,
+    BreadcrumbLink,
+    Image,
+    Box,
+    Avatar
+  } from "@chakra-ui/react"
 
 export function NavHeader({
-    props
+    user
 }){
+    const isUser = (user) => {
+        if(user){
+            if(user.avatar){
+                const string = `https://cdn.discordapp.com/avatars/${user.discordID}/${user.avatar}.png`
+                console.log(string)
+                return(
+                    <BreadcrumbLink href="/menu">
+                        <Avatar src={string} size="md" name={user.username} />
+                        {user.username}#{user.discriminator}
+                    </BreadcrumbLink>
+                )
+            } else if (!user.avatar || user.avatar === null){
+                return(
+                    <BreadcrumbLink href="/menu">
+                        <Avatar src="" size="md" name={user.username} bg="grey.100"/>
+                        {user.username}
+                    </BreadcrumbLink>
+                )
+            }
+        }else if(!user || user === undefined) {
+            return (<BreadcrumbLink href="http://localhost:8080/api/auth/discord">Login</BreadcrumbLink>)
+        }
+    }
     return(
-        <nav>
-        <div className="nav-wrapper blue accent-3">
-        <a href="../assets/images/BHG.png" className="brand-logo circle responsive-img"><img src="../assets/images/BHG.png" alt="brand-logo" width="60" height="60"/></a>
-        <ul id="nav-mobile" className="right hide-on-med-and-down">
-            <li><a href="/">Home</a></li>
-            <li><a href="/commands">Commands</a></li>
-            <li><a href="/support">Support</a></li>
-            <li><a href="/faq">FAQ</a></li>
-            <li><a href="/music">Music</a></li>
-            <li><a href="http://localhost:8080/api/auth/discord">Login</a></li>
-        </ul>
-        </div>
-    </nav>
+        <React.Fragment>
+            <Box bg="blue" w="100%" color="white">
+                <Breadcrumb>
+                    <BreadcrumbLink href="/">
+                        <Image src="../assets/images/BHG.png" alt="brand-logo" borderRadius="full" boxSize="40px" />
+                    </BreadcrumbLink>
+                </Breadcrumb>
+                <Breadcrumb spacing="8px" className="center" fontSize="lg">
+                    <BreadcrumbItem>
+                        <BreadcrumbLink href="/">Home</BreadcrumbLink>
+                    </BreadcrumbItem>
+                    <BreadcrumbItem>
+                        <BreadcrumbLink href="/commands">Commands</BreadcrumbLink>
+                    </BreadcrumbItem>
+                    <BreadcrumbItem>
+                        <BreadcrumbLink href="/support">Support</BreadcrumbLink>
+                    </BreadcrumbItem>
+                    <BreadcrumbItem>
+                        <BreadcrumbLink href="/faq">FAQ</BreadcrumbLink>
+                    </BreadcrumbItem>
+                    <BreadcrumbItem>
+                        <BreadcrumbLink href="/music">Music</BreadcrumbLink>
+                    </BreadcrumbItem>
+                    <BreadcrumbItem>
+                        {isUser(user)}
+                    </BreadcrumbItem>
+                </Breadcrumb>
+            </Box>
+        </React.Fragment>
     )
 }

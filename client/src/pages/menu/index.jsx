@@ -27,7 +27,7 @@ export function Menu({
 
     return !loading && (
         <div>
-            <NavHeader />
+            <NavHeader user={user}/>
             <div className="container">
                 <h1 className="white-text">{user.username}'s Menu</h1>
                 <MenuComponent guilds={ guilds } />

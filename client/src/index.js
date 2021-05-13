@@ -6,14 +6,14 @@ import { ChakraProvider, CSSReset } from "@chakra-ui/react";
 import { BrowserRouter as Router } from 'react-router-dom';
 
 ReactDOM.render(
-  <React.StrictMode>
-      <ChakraProvider>
-        <CSSReset />
+  <ChakraProvider>
+    <CSSReset />
+      <React.StrictMode>
         <Router>
           <App />
         </Router>
-      </ChakraProvider>
-  </React.StrictMode>,
+      </React.StrictMode>
+  </ChakraProvider>,
   document.getElementById('root')
 );
 

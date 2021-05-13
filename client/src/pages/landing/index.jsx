@@ -1,13 +1,28 @@
 import React from 'react'
 import { NavHeader } from '../../components/index'
+import { getUserDetails } from '../../utils/api'
 
-export function Landing(props){
+export function Landing({history}){
+    
+    const [user, setUser] = React.useState(null)
+    const [loading, setLoading] = React.useState(true)
 
-    const login = () => window.location.href = 'http://localhost:8080/api/auth/discord'
+    React.useEffect( () => {
+        getUserDetails()
+        .then(( {data} ) => {
+            setUser(data)
+            setLoading(false)
+        }).catch((err) => {
+            console.log(err)
+            history.push('/')
+            setLoading(false)
+        })
+    }, [])
 
-    return (
+    console.log(user)
+    return !loading && (
         <div>
-            <NavHeader />
+            <NavHeader user={user}/>
             
             <div className="container">
 
