@@ -5,7 +5,12 @@ import {
     BreadcrumbLink,
     Image,
     Box,
-    Avatar
+    Avatar,
+    Wrap,
+    WrapItem,
+    SimpleGrid,
+    Center,
+    Text
   } from "@chakra-ui/react"
 
 export function NavHeader({
@@ -18,15 +23,23 @@ export function NavHeader({
                 console.log(string)
                 return(
                     <BreadcrumbLink href="/menu">
-                        <Avatar src={string} size="md" name={user.username} />
-                        {user.username}#{user.discriminator}
+                        <Wrap align="center">
+                            <Avatar src={string} size="md" name={user.username} />
+                            <Text fontSize="lg">
+                                {user.username}#{user.discriminator}
+                            </Text>
+                        </Wrap>
                     </BreadcrumbLink>
                 )
             } else if (!user.avatar || user.avatar === null){
                 return(
                     <BreadcrumbLink href="/menu">
-                        <Avatar src="" size="md" name={user.username} bg="grey.100"/>
-                        {user.username}
+                        <Wrap align="center">
+                            <Avatar src="" size="md" name={user.username} bg="grey.100"/>
+                            <Text fontSize="lg">
+                                {user.username}
+                            </Text>
+                        </Wrap>
                     </BreadcrumbLink>
                 )
             }
@@ -35,34 +48,44 @@ export function NavHeader({
         }
     }
     return(
-        <React.Fragment>
-            <Box bg="blue" w="100%" color="white">
-                <Breadcrumb>
-                    <BreadcrumbLink href="/">
-                        <Image src="../assets/images/BHG.png" alt="brand-logo" borderRadius="full" boxSize="40px" />
-                    </BreadcrumbLink>
-                </Breadcrumb>
-                <Breadcrumb spacing="8px" className="center" fontSize="lg">
-                    <BreadcrumbItem>
-                        <BreadcrumbLink href="/">Home</BreadcrumbLink>
-                    </BreadcrumbItem>
-                    <BreadcrumbItem>
-                        <BreadcrumbLink href="/commands">Commands</BreadcrumbLink>
-                    </BreadcrumbItem>
-                    <BreadcrumbItem>
-                        <BreadcrumbLink href="/support">Support</BreadcrumbLink>
-                    </BreadcrumbItem>
-                    <BreadcrumbItem>
-                        <BreadcrumbLink href="/faq">FAQ</BreadcrumbLink>
-                    </BreadcrumbItem>
-                    <BreadcrumbItem>
-                        <BreadcrumbLink href="/music">Music</BreadcrumbLink>
-                    </BreadcrumbItem>
-                    <BreadcrumbItem>
-                        {isUser(user)}
-                    </BreadcrumbItem>
-                </Breadcrumb>
+            <Box bg="blue.600" w="100%" color="white">
+                <SimpleGrid columns={3}>
+                    <Box>
+                        <Breadcrumb align="left">
+                            <BreadcrumbLink href="/">
+                                <Image src="../assets/images/BHG.png" alt="brand-logo" borderRadius="full" boxSize="60px" />
+                            </BreadcrumbLink>
+                        </Breadcrumb>
+                    </Box>
+                    <Box>
+                        <Center h="60px">
+                            <Breadcrumb spacing="8px" align="center" fontSize="lg" separator="  ">
+                                <BreadcrumbItem>
+                                    <BreadcrumbLink href="/">Home</BreadcrumbLink>
+                                </BreadcrumbItem>
+                                <BreadcrumbItem>
+                                    <BreadcrumbLink href="/commands">Commands</BreadcrumbLink>
+                                </BreadcrumbItem>
+                                <BreadcrumbItem>
+                                    <BreadcrumbLink href="/support">Support</BreadcrumbLink>
+                                </BreadcrumbItem>
+                                <BreadcrumbItem>
+                                    <BreadcrumbLink href="/faq">FAQ</BreadcrumbLink>
+                                </BreadcrumbItem>
+                                <BreadcrumbItem>
+                                    <BreadcrumbLink href="/music">Music</BreadcrumbLink>
+                                </BreadcrumbItem>
+                            </Breadcrumb>
+                        </Center>
+                    </Box>
+                    <Box align="right" p={2}>
+                        <Breadcrumb>
+                            <BreadcrumbItem>
+                                    {isUser(user)}
+                            </BreadcrumbItem>
+                        </Breadcrumb>
+                    </Box>
+                </SimpleGrid>
             </Box>
-        </React.Fragment>
     )
 }

@@ -1,3 +1,4 @@
+import { Box, Container, SimpleGrid } from '@chakra-ui/layout'
 import React from 'react'
 import { DefaultRoleDashboard, 
     PrefixDashboard, 
@@ -31,43 +32,45 @@ export function DashboardMenu({
     updateBlacklist
 }) {
     return (
-        <div>
-            <div className="row">
-                <div className="col sm12 m4">
+        <React.Fragment>
+            <SimpleGrid columns={{sm:1, md:2, lg:3}}>
+                <Box w="400px" rounded='20px' overflow="hidden" boxShadow="sm" bg='gray.500' m={3}>
                     <PrefixDashboard prefix={prefix} updatePrefix={updatePrefix} />
-                </div>
-                <div className="col sm12 m4">
+                </Box>
+                <Box w="400px" rounded='20px' overflow="hidden" boxShadow="sm" bg='gray.500' m={3}>
                     <DefaultRoleDashboard roles={roles} updateDefaultRole={updateDefaultRole} />
-                </div>
-                <div className="col sm12 m4">
+                </Box>
+                <Box w="400px" rounded='20px' overflow="hidden" boxShadow="sm" bg='gray.500' m={3}>
                     <MuteRoleDashboard roles={roles} updateMuteRole={updateMuteRole} />
-                </div>
-            </div>
-            <div className="row">
-                <div className="col sm12 m4">
+                </Box>
+            </SimpleGrid>
+            <SimpleGrid columns={{sm:1, md:2, lg:3}}>
+                <Box w="400px" rounded='20px' overflow="hidden" boxShadow="sm" bg='gray.500' m={3}>
                     <WelcomeChannelDashboard channels={channels} updateWelcomeChannel={updateWelcomeChannel} />
-                </div>
-                <div className="col sm12 m4">
+                </Box>
+                <Box w="400px" rounded='20px' overflow="hidden" boxShadow="sm" bg='gray.500' m={3}>
                     <LogsChannelDashboard channels={channels} updateLogsChannel={updateLogsChannel} />
-                </div>
-                <div className="col sm12 m4">
+                </Box>
+                <Box w="400px" rounded='20px' overflow="hidden" boxShadow="sm" bg='gray.500' m={3}>
                     <TicketsChannelDashboard channels={channels} updateTicketsChannel={updateTicketsChannel} />
-                </div>
-            </div>
-            <div className="row">
-                <div className="col sm12 m4">
+                </Box>
+            </SimpleGrid>
+            <SimpleGrid columns={{sm:1, md:2, lg:3}}>
+                <Box w="400px" rounded='20px' overflow="hidden" boxShadow="sm" bg='gray.500' m={3}>
                     <SuggestionChannelDashboard channels={channels} updateSuggestionChannel={updateSuggestionChannel} />
-                </div>
-                <div className="col sm12 m4">
+                </Box>
+                <Box w="400px" rounded='20px' overflow="hidden" boxShadow="sm" bg='gray.500' m={3}>
                     <ApprovedSuggestionChannelDashboard channels={channels} updateApprovedSuggestionChannel={updateApprovedSuggestionChannel} />
-                </div>
-                <div className="col sm12 m4">
+                </Box>
+                <Box w="400px" rounded='20px' overflow="hidden" boxShadow="sm" bg='gray.500' m={3}>
                     <AntiadDashboard updateAntiad={updateAntiad} />
-                </div>
-            </div>
-            <div className="row">
-                <BlacklistDashboard updateBlacklist={updateBlacklist} blacklist={blacklist} />
-            </div>
-        </div>
+                </Box>
+            </SimpleGrid>
+            <SimpleGrid columns={1}>
+                <Box w="1240px" rounded='20px' overflow="hidden" boxShadow="sm" bg='gray.500' m={3}>
+                    <BlacklistDashboard updateBlacklist={updateBlacklist} blacklist={blacklist} />
+                </Box>
+            </SimpleGrid>
+        </React.Fragment>
     )
 }

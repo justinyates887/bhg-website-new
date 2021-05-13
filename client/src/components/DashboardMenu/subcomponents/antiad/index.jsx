@@ -1,6 +1,6 @@
 import React from 'react'
 import { Formik } from 'formik'
-import { Button, Switch, FormLabel } from '@chakra-ui/react'
+import { Button, Switch, FormLabel, Text, Wrap } from '@chakra-ui/react'
 
 export function AntiadDashboard({
     updateAntiad
@@ -8,29 +8,28 @@ export function AntiadDashboard({
     return(
         
         <React.Fragment>
-            <div className="card hoverable white-text grey darken-2">
-                <span className="card-title">Antiad</span>
-                <Formik
-                        className="card-content input-field"
-                        initialValues={{ antiad: '' }}
-                        onSubmit={(values) => { 
-                            updateAntiad(values.antiad) 
-                        }}
-                    >
-                        {
-                            (props) => (
-                                <form onSubmit={props.handleSubmit}>
-                                        <FormLabel htmlFor="switch">
-                                            Enable Antiad?
+            <Text fontSize="xl" color="white" p={3} ml={3}>Antiad</Text>
+            <Formik
+                    initialValues={{ antiad: '' }}
+                    onSubmit={(values) => { 
+                        updateAntiad(values.antiad) 
+                    }}
+                >
+                    {
+                        (props) => (
+                            <form onSubmit={props.handleSubmit}>
+                                    <Wrap align="center" m={0}>
+                                        <FormLabel htmlFor="switch" color="white">
+                                            <Text color="white" p={1} ml={3} mb={0}> Enable Antiad?</Text>
                                         </FormLabel>
-                                        <Switch id="antiad" onChange={props.handleChange} />
-                                        <br />
-                                        <Button type="submit" children="Sumbit" className="btn blue" />
-                                </form>
-                            )
-                        }
-                </Formik>
-            </div>
+                                        <Switch id="antiad" onChange={props.handleChange} p={0}/>
+                                    </Wrap>
+                                    <br />
+                                    <Button type="submit" children="Sumbit" colorScheme="blue" p={4} mb={3} ml={4} />
+                            </form>
+                        )
+                    }
+            </Formik>
         </React.Fragment>
     )
 }

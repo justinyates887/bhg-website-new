@@ -1,6 +1,6 @@
 import React from 'react'
 import { Formik } from 'formik'
-import { Input, Button } from '@chakra-ui/react'
+import { Input, Button, Text, Box } from '@chakra-ui/react'
 
 export function PrefixDashboard({
     prefix,
@@ -8,8 +8,7 @@ export function PrefixDashboard({
 }) {
     return(
         <React.Fragment>
-            <div className="card hoverable white-text grey darken-2">
-                <span className="card-title">Prefix</span>
+                <Text fontSize="xl" color="white" p={3} ml={3}>Prefix</Text>
                 <Formik
                     initialValues={{ prefix }}
                     onSubmit={(values) => {
@@ -19,13 +18,16 @@ export function PrefixDashboard({
                     {
                         (props) => (
                             <form onSubmit={props.handleSubmit}>
-                                <Input type="text" name="prefix" onChange={props.handleChange} defaultValue={prefix} />
-                                <Button type="submit" children="Update Prefix" className="btn blue"/>
+                                <Input 
+                                    type="text" name="prefix" onChange={props.handleChange} 
+                                    defaultValue={prefix} p={2} variant="flushed" errorBorderColor="red.500"
+                                    maxWidth="350" align="center" color="white" ml={5}
+                                />
+                                <Button type="submit" children="Update Prefix" colorScheme="blue" p={2} m={4} />
                             </form>
                         )
                     }
                 </Formik>
-            </div>
         </React.Fragment>
     )
 }

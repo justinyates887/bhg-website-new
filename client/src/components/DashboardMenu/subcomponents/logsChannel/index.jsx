@@ -1,6 +1,6 @@
 import React from 'react'
 import { Formik } from 'formik'
-import { Button, Select } from '@chakra-ui/react'
+import { Button, Select, Text } from '@chakra-ui/react'
 
 export function LogsChannelDashboard({
     channels,
@@ -9,32 +9,30 @@ export function LogsChannelDashboard({
     return(
         
         <React.Fragment>
-            <div className="card white-text grey darken-2">
-                <span className="card-title">Logs Channel</span>
-                <Formik
-                        className="card-content input-field"
-                        initialValues={{ logsChannel: '' }}
-                        onSubmit={(values) => { 
-                            updateLogsChannel(values.logsChannel) 
-                        }}
-                    >
-                        {
-                            (props) => (
-                                <form onSubmit={props.handleSubmit}>
-                                        <Select name="logsChannel" 
-                                                variant="flushed"
-                                                onChange={props.handleChange}
-                                        >
-                                            {channels.map((channel) => (
-                                                <option value={channel.id} key={channel.id}>{channel.name}</option>
-                                            ))}
-                                        </Select>
-                                        <Button type="submit" children="Update Channel" className="btn blue" />
-                                </form>
-                            )
-                        }
-                </Formik>
-            </div>
+            <Text fontSize="xl" color="white" p={3} ml={3}>Logs Channel</Text>
+            <Formik
+                    initialValues={{ logsChannel: '' }}
+                    onSubmit={(values) => { 
+                        updateLogsChannel(values.logsChannel) 
+                    }}
+                >
+                    {
+                        (props) => (
+                            <form onSubmit={props.handleSubmit}>
+                                    <Select name="logsChannel" 
+                                            variant="flushed"
+                                            onChange={props.handleChange}
+                                            maxWidth="350" align="center" color="white" ml={5}
+                                    >
+                                        {channels.map((channel) => (
+                                            <option value={channel.id} key={channel.id}>{channel.name}</option>
+                                        ))}
+                                    </Select>
+                                    <Button type="submit" children="Update Channel" colorScheme="blue" p={2} m={4} />
+                            </form>
+                        )
+                    }
+            </Formik>
         </React.Fragment>
     )
 }

@@ -1,6 +1,6 @@
 import React from 'react'
 import { Formik } from 'formik'
-import { Button, Select, Stack } from '@chakra-ui/react'
+import { Button, Select, Stack, Text } from '@chakra-ui/react'
 
 export function DefaultRoleDashboard({
     roles,
@@ -9,38 +9,31 @@ export function DefaultRoleDashboard({
     return(
         
         <React.Fragment>
-            <div className="card hoverable white-text grey darken-2">
-                <span className="card-title">Base Member Role</span>
-                    <div className="card-content">
-                        <Formik
-                                initialValues={{ defaultRole: '' }}
-                                onSubmit={(values) => { 
-                                    console.log(values.defaultRole)
-                                    updateDefaultRole(values.defaultRole) 
-                                }}
-                            >
-                                {
-                                    (props) => (
-                                        <div className="input-field">
-                                        <form onSubmit={props.handleSubmit}>
-                                            <Select name="defaultRole" 
-                                                    variant="flushed"
-                                                    placeholder="Select Role"
-                                                    onChange={props.handleChange}
-                                            >
-                                                {roles.map((role) => (
-                                                    <option value={role.id} key={role.id}>{role.name}</option>
-                                                ))}
-                                            </Select>
-                                            <Button type="submit" children="Update Role" className="btn blue" />
-                                        </form>
-                                        </div>
-
-                                    )
-                                }
-                        </Formik>
-                </div>
-            </div>
+            <Text fontSize="xl" color="white" p={3} ml={3}>Base Member Role</Text>
+                <Formik
+                        initialValues={{ defaultRole: '' }}
+                        onSubmit={(values) => { 
+                            updateDefaultRole(values.defaultRole) 
+                        }}
+                    >
+                        {
+                            (props) => (
+                                <form onSubmit={props.handleSubmit}>
+                                    <Select name="defaultRole" 
+                                            variant="flushed"
+                                            placeholder="Select Role"
+                                            onChange={props.handleChange}
+                                            maxWidth="350" align="center" color="white" ml={5}                                            
+                                    >
+                                        {roles.map((role) => (
+                                            <option value={role.id} key={role.id}>{role.name}</option>
+                                        ))}
+                                    </Select>
+                                    <Button type="submit" children="Update Role" colorScheme="blue" p={2} m={4}  />
+                                </form>
+                            )
+                        }
+                </Formik>
         </React.Fragment>
     )
 }

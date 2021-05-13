@@ -1,5 +1,5 @@
 import React from 'react'
-import { getGuildPrefix, getGuildRoles, getUserDetails, getGuildChannels, getGuildBlacklist } from '../../utils/api'
+import { getGuildPrefix, getGuildRoles, getUserDetails, getGuildChannels, getGuildBlacklist, getGuilds } from '../../utils/api'
 import { DashboardMenu } from '../../components'
 import { NavHeader } from '../../components/index'
 import { updateGuildPrefix, 
@@ -13,7 +13,7 @@ import { updateGuildPrefix,
     updateAntiad,
     updateBlacklist
 } from '../../utils/api'
-
+import { Container, Text } from '@chakra-ui/react'
 export function Dashboard({
     history,
     match
@@ -94,9 +94,9 @@ export function Dashboard({
 
     return !loading && (
         <div>
-            <NavHeader />
-            <div className="container">
-                <h1 className="h1 white-text">{ user.username }'s Dashboard</h1>
+            <NavHeader user={user}/>
+            <Container  maxW="container.xl">
+                <Text fontSize="3xl" color="white" align="center" p={3}>{ user.username }'s Dashboard</Text>
                 <DashboardMenu 
                     user={user} 
                     prefix={prefix}
@@ -114,7 +114,7 @@ export function Dashboard({
                     updateBlacklist={updateBlacklistParent}
                     blacklist={blacklist}
                 />
-            </div>
+            </Container>
         </div>
     )
 }
