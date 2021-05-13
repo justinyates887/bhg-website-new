@@ -13,16 +13,17 @@ export function MuteRoleDashboard({
                 <span className="card-title">Muted Member Role</span>
                 <Formik
                         className="card-content input-field"
-                        initialValues={{ muteRole: '@everyone' }}
-                        onSubmit={(values) => { 
-                            updateMuteRole(values) 
+                        initialValues={{ muteRole: '' }}
+                        onSubmit={(values) => {
+                            updateMuteRole(values.muteRole) 
                         }}
                     >
                         {
                             (props) => (
                                 <form onSubmit={props.handleSubmit}>
-                                        <Select name="defaultRole" 
+                                        <Select name="muteRole" 
                                                 variant="flushed"
+                                                placeholder="Select Role"
                                                 onChange={props.handleChange}
                                         >
                                             {roles.map((role) => (

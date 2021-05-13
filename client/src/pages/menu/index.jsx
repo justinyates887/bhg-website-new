@@ -28,8 +28,10 @@ export function Menu({
     return !loading && (
         <div>
             <NavHeader />
-            <h1>Menu</h1>
+            <div className="container">
+                <h1 className="white-text">{user.username}'s Menu</h1>
                 <MenuComponent guilds={ guilds } />
+            </div>
         </div>
     )
 }

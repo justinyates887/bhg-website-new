@@ -2,17 +2,17 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './assets/styles/App.css';
 import App from './App';
-import { ThemeProvider, CSSReset } from "@chakra-ui/react";
+import { ChakraProvider, CSSReset } from "@chakra-ui/react";
 import { BrowserRouter as Router } from 'react-router-dom';
 
 ReactDOM.render(
   <React.StrictMode>
-      <ThemeProvider>
+      <ChakraProvider>
         <CSSReset />
         <Router>
           <App />
         </Router>
-      </ThemeProvider>
+      </ChakraProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );

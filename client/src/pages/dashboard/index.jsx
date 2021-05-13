@@ -95,24 +95,26 @@ export function Dashboard({
     return !loading && (
         <div>
             <NavHeader />
-            <h1 className="h1 white-text">{ user.username }'s Dashboard</h1>
-            <DashboardMenu 
-                user={user} 
-                prefix={prefix}
-                roles={roles}
-                channels={channels}
-                updatePrefix={updateGuildPrefixParent}
-                updateDefaultRole={updateDefaultRoleParent}
-                updateMuteRole={updateMuteRoleParent}
-                updateWelcomeChannel={updateWelcomeChannelParent}
-                updateLogsChannel={updateLogsChannelParent}
-                updateTicketsChannel={updateTicketsChannelParent}
-                updateSuggestionChannel={updateSuggestionChannelParent}
-                updateApprovedSuggestionChannel={updateApprovedSuggestionChannelParent}
-                updateAntiad={updateAntiadParent}
-                updateBlacklist={updateBlacklistParent}
-                blacklist={blacklist}
-            />
+            <div className="container">
+                <h1 className="h1 white-text">{ user.username }'s Dashboard</h1>
+                <DashboardMenu 
+                    user={user} 
+                    prefix={prefix}
+                    roles={roles}
+                    channels={channels}
+                    updatePrefix={updateGuildPrefixParent}
+                    updateDefaultRole={updateDefaultRoleParent}
+                    updateMuteRole={updateMuteRoleParent}
+                    updateWelcomeChannel={updateWelcomeChannelParent}
+                    updateLogsChannel={updateLogsChannelParent}
+                    updateTicketsChannel={updateTicketsChannelParent}
+                    updateSuggestionChannel={updateSuggestionChannelParent}
+                    updateApprovedSuggestionChannel={updateApprovedSuggestionChannelParent}
+                    updateAntiad={updateAntiadParent}
+                    updateBlacklist={updateBlacklistParent}
+                    blacklist={blacklist}
+                />
+            </div>
         </div>
     )
 }

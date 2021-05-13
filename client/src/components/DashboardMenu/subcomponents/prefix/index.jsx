@@ -8,7 +8,7 @@ export function PrefixDashboard({
 }) {
     return(
         <React.Fragment>
-            <div className="card white-text grey darken-2">
+            <div className="card hoverable white-text grey darken-2">
                 <span className="card-title">Prefix</span>
                 <Formik
                     initialValues={{ prefix }}

@@ -15,7 +15,7 @@ export function TicketsChannelDashboard({
                         className="card-content input-field"
                         initialValues={{ ticketsChannel: '' }}
                         onSubmit={(values) => { 
-                            updateTicketsChannel(values) 
+                            updateTicketsChannel(values.ticketsChannel) 
                         }}
                     >
                         {

@@ -7,7 +7,8 @@ import { DefaultRoleDashboard,
     TicketsChannelDashboard,
     SuggestionChannelDashboard,
     ApprovedSuggestionChannelDashboard,
-    AntiadDashboard
+    AntiadDashboard,
+    BlacklistDashboard
 } from './subcomponents'
 
 export function DashboardMenu({
@@ -32,40 +33,40 @@ export function DashboardMenu({
     return (
         <div>
             <div className="row">
-                <div className="col sm-12 m-6">
+                <div className="col sm12 m4">
                     <PrefixDashboard prefix={prefix} updatePrefix={updatePrefix} />
                 </div>
-                <div className="col sm-12 m-6">
+                <div className="col sm12 m4">
                     <DefaultRoleDashboard roles={roles} updateDefaultRole={updateDefaultRole} />
                 </div>
-                <div className="col sm-12 m-6">
+                <div className="col sm12 m4">
                     <MuteRoleDashboard roles={roles} updateMuteRole={updateMuteRole} />
                 </div>
             </div>
             <div className="row">
-                <div className="col sm-12 m-6">
+                <div className="col sm12 m4">
                     <WelcomeChannelDashboard channels={channels} updateWelcomeChannel={updateWelcomeChannel} />
                 </div>
-                <div className="col sm-12 m-6">
+                <div className="col sm12 m4">
                     <LogsChannelDashboard channels={channels} updateLogsChannel={updateLogsChannel} />
                 </div>
-                <div className="col sm-12 m-6">
+                <div className="col sm12 m4">
                     <TicketsChannelDashboard channels={channels} updateTicketsChannel={updateTicketsChannel} />
                 </div>
             </div>
             <div className="row">
-                <div className="col sm-12 m-6">
+                <div className="col sm12 m4">
                     <SuggestionChannelDashboard channels={channels} updateSuggestionChannel={updateSuggestionChannel} />
                 </div>
-                <div className="col sm-12 m-6">
+                <div className="col sm12 m4">
                     <ApprovedSuggestionChannelDashboard channels={channels} updateApprovedSuggestionChannel={updateApprovedSuggestionChannel} />
                 </div>
-                <div className="col sm-12 m-6">
+                <div className="col sm12 m4">
                     <AntiadDashboard updateAntiad={updateAntiad} />
                 </div>
             </div>
             <div className="row">
-                <UpdateBlacklist updateBlacklist={updateBlacklist} blacklist={blacklist} />
+                <BlacklistDashboard updateBlacklist={updateBlacklist} blacklist={blacklist} />
             </div>
         </div>
     )

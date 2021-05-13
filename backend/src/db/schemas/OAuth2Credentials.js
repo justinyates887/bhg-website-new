@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
 
 const OAuth2CredientialsSchema = new mongoose.Schema({
-    acessToken: {
+    accessToken: {
         type: String,
         required: true
     },

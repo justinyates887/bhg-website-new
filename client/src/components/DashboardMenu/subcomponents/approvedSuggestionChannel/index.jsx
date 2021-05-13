@@ -15,7 +15,7 @@ export function ApprovedSuggestionChannelDashboard({
                         className="card-content input-field"
                         initialValues={{ approvedSuggestionChannel: '' }}
                         onSubmit={(values) => { 
-                            updateApprovedSuggestionChannel(values) 
+                            updateApprovedSuggestionChannel(values.approvedSuggestionChannel) 
                         }}
                     >
                         {

@@ -15,7 +15,7 @@ export function LogsChannelDashboard({
                         className="card-content input-field"
                         initialValues={{ logsChannel: '' }}
                         onSubmit={(values) => { 
-                            updateLogsChannel(values) 
+                            updateLogsChannel(values.logsChannel) 
                         }}
                     >
                         {
