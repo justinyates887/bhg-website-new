@@ -153,3 +153,11 @@ export function updateBlacklist(guildID, words) {
         }
     )
 }
+
+export function getWarnings(guildID) {
+    return axios.get(
+        `http://localhost:8080/api/discord/guilds/${guildID}/warnings`, {
+            withCredentials: true
+        }
+    )
+}

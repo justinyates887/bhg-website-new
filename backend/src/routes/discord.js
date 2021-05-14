@@ -12,6 +12,7 @@ const ticketsCategorySchema = require('../db/schemas/tickets')
 const suggestChannelsSchema = require('../db/schemas/suggest')
 const antiAdSchema = require('../db/schemas/antiad')
 const blacklistSchema = require('../db/schemas/blacklist')
+const warningSchema = require('../db/schemas/warnings')
 
 router.get('/guilds', async (req, res) => {
     const guilds = await getBotGuilds()
@@ -31,6 +32,12 @@ router.get('/guilds', async (req, res) => {
 router.get('/guilds/@me', async (req, res) => {
     const guilds = await getBotGuilds()
     res.send(guilds)
+})
+
+router.get('/guilds/:guildID/warnings' , async (req, res) => {
+    const { guildID } = req.params
+    const result = await warningSchema.find({ gID: guildID })
+    return result ? res.send(result) : res.send({})
 })
 
 router.get('/guilds/:guildID/prefixConfig', async (req, res) => {

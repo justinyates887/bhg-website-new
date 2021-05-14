@@ -35,11 +35,18 @@ export function Included({
                             {isOwner(guild)}
                         </Wrap>
                         <Divider orientation="horizontal" />
-                        <Box p={5}>
-                            <Button bg="blue.500">
-                                <Link to={ `/dashboard/${guild.id}` }>Dashboard</Link>
-                            </Button>
-                        </Box>
+                        <Wrap align="center">
+                            <Box p={5}>
+                                <Button bg="blue.500">
+                                    <Link to={ `/dashboard/${guild.id}` }>Dashboard</Link>
+                                </Button>
+                            </Box>
+                            <Box p={5}>
+                                <Button bg="red.500">
+                                    <Link to={ `/warnings/${guild.id}` }>Warnings</Link>
+                                </Button>
+                            </Box>
+                        </Wrap>
                     </Box>
                 ))}
                 </SimpleGrid>
