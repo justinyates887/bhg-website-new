@@ -31,17 +31,23 @@ export function Warnings({
         })
     }, [])
 
+    console.log(warnings)
     return !loading && (
         <div>
             <NavHeader user={user} />
-            {warnings.map(warning => {
+            <Container >
+            {warnings.map((obj, i) => {
+                const [warning] = obj.warnings
                 return (
-                    <Box>
-                        <Text color="white">Author: {warning.key("author")}</Text>
-                        <Text>Reason: {warning.key("warnReason")}</Text>
+                    <Box key={i} w="600px" rounded='20px' overflow="hidden" boxShadow="sm" bg='gray.500' m={3}>
+                        <Text>Offender: {warning.target}</Text>
+                        <Text color="white">Author: {warning.author}</Text>
+                        <Text>Reason: {warning.warnReason}</Text>
+                        <Text>Date: {warning.timestamp}</Text>
                     </Box>
                 )
             })}
+            </Container>
         </div>
     )
 }

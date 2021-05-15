@@ -154,6 +154,16 @@ export function updateBlacklist(guildID, words) {
     )
 }
 
+export function removeBlacklistWord(guildID, word) {
+    return axios.put(
+        `http://localhost:8080/api/discord/guilds/${guildID}/blacklist/remove`, {
+            word
+        }, {
+            withCredentials: true
+        }
+    )
+}
+
 export function getWarnings(guildID) {
     return axios.get(
         `http://localhost:8080/api/discord/guilds/${guildID}/warnings`, {

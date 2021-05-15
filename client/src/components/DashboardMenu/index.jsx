@@ -14,6 +14,7 @@ import { DefaultRoleDashboard,
 
 export function DashboardMenu({
     history,
+    match,
     guildID,
     user,
     roles,
@@ -29,6 +30,7 @@ export function DashboardMenu({
     updateApprovedSuggestionChannel,
     updateAntiad,
     blacklist,
+    setBlacklist,
     updateBlacklist,
 }) {
     return (
@@ -68,7 +70,7 @@ export function DashboardMenu({
             </SimpleGrid>
             <SimpleGrid columns={1}>
                 <Box w="1240px" rounded='20px' overflow="hidden" boxShadow="sm" bg='gray.500' m={3}>
-                    <BlacklistDashboard updateBlacklist={updateBlacklist} blacklist={blacklist} />
+                    <BlacklistDashboard updateBlacklist={updateBlacklist} blacklist={blacklist} match={match} setBlacklist={setBlacklist}/>
                 </Box>
             </SimpleGrid>
         </React.Fragment>

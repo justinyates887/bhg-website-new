@@ -1,10 +1,13 @@
 import React from 'react'
 import { Formik } from 'formik'
 import { Button, HStack, Tag, TagLabel, TagCloseButton, Input, Text } from '@chakra-ui/react'
+import { removeBlacklistWord } from '../../../../utils/api'
 
 export function BlacklistDashboard({
     updateBlacklist,
-    blacklist
+    blacklist,
+    setBlacklist,
+    match
 }){
     function returnTag(blacklist){
         if(blacklist){
@@ -13,7 +16,10 @@ export function BlacklistDashboard({
                     {blacklist.map((word) => (
                         <Tag value={word} key={word} size={"md"} borderRadius="full" variant="solid" colorScheme="blue">
                             <TagLabel>{word}</TagLabel>
-                            <TagCloseButton />
+                            <TagCloseButton onClick={() => {
+                                removeBlacklistWord(match.params.id, word)
+                                setBlacklist(blacklist => blacklist.filter(wordList => word != wordList))
+                                }}/>
                         </Tag>
                     ))}
                 </HStack>
@@ -28,6 +34,7 @@ export function BlacklistDashboard({
                     initialValues={ blacklist }
                     onSubmit={(values) => { 
                         updateBlacklist(values.word)
+                        setBlacklist(blacklist => [...blacklist, values.word])
                     }}
                 >
                     {

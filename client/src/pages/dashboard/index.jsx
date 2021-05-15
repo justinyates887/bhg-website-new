@@ -135,6 +135,7 @@ export function Dashboard({
                 <DashboardMenu 
                     user={user} 
                     prefix={prefix}
+                    match={match}
                     roles={roles}
                     channels={channels}
                     updatePrefix={updateGuildPrefixParent}
@@ -148,6 +149,7 @@ export function Dashboard({
                     updateAntiad={updateAntiadParent}
                     updateBlacklist={updateBlacklistParent}
                     blacklist={blacklist}
+                    setBlacklist={setBlacklist}
                 />
             </Container>
         </div>

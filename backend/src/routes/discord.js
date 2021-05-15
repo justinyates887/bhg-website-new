@@ -271,6 +271,27 @@ router.put('/guilds/:guildID/blacklist', async (req, res) => {
     }
 })
 
+router.put('/guilds/:guildID/blacklist/remove', async (req, res) => {
+    const { word } = req.body
+    if(!word) return res.status(400).send({ msg: "Bad Request" })
+    const { guildID } = req.params;
+    try{
+        const update = await blacklistSchema.findOneAndUpdate({
+            _id: guildID
+        }, {
+            $pull: {
+                words: word
+            }
+        },{
+            upsert: true,
+            new: true
+        }).exec()
+        return update ? res.send(update) : res.status(400).send({ msg: "Bad Request" })
+    }catch(err){
+        console.log(err)
+        res.status(500).send({ msg: "Internal Server Error" })
+    }
+})
 
 
 module.exports = router
