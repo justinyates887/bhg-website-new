@@ -1,7 +1,7 @@
 import React from 'react'
 import { getUserDetails, getGuilds, getWarnings } from '../../utils/api'
 import { NavHeader } from '../../components/index'
-import { Box, Container, Text } from '@chakra-ui/layout'
+import { Box, Container, Text, Divider, Wrap } from '@chakra-ui/layout'
 
 export function Warnings({
     guildID,
@@ -40,10 +40,14 @@ export function Warnings({
                 const [warning] = obj.warnings
                 return (
                     <Box align="left" key={i} w="600px" rounded='20px' overflow="hidden" boxShadow="sm" bg='gray.500' m={3} p={5}>
-                        <Text color="red.700" fontSize="2xl">Offender: {warning.target}</Text>
-                        <Text color="white" fontSize="xl">Author: {warning.author}</Text>
-                        <Text color="blue.700" fontSize="lg">Reason: {warning.warnReason}</Text>
-                        <Text color="white">Date: {warning.timestamp}</Text>
+                        <Wrap align="center">
+                            <Text color="white" fontSize="2xl">Offender:</Text> 
+                            <Text color="red.700" fontSize="2xl">{warning.target}</Text>
+                        </Wrap>
+                        <Divider orientation="horizontal" p={1}/>
+                        <Text color="white" fontSize="xl">Reason: {warning.warnReason}</Text>
+                        <Text color="gray.300" fontSize="lg">Author: {warning.author}</Text>
+                        <Text color="gray.300" fontSize="sm">Date: {warning.timestamp}</Text>
                     </Box>
                 )
             })}

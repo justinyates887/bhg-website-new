@@ -31,18 +31,18 @@ export function Included({
                     <Box key={guild.id} w="500px" rounded='20px' overflow="hidden" boxShadow="sm" bg='gray.500' m={3}>
                         <Wrap align="center" p={2}>
                             {guildIcon(guild)}
-                            <Text fontSize="2xl" p={3}>{ guild.name }</Text>
+                            <Text fontSize="2xl" p={3} color="white">{ guild.name }</Text>
                             {isOwner(guild)}
                         </Wrap>
                         <Divider orientation="horizontal" />
                         <Wrap align="center">
                             <Box p={5}>
-                                <Button bg="blue.500">
+                                <Button bg="blue.500" color="white">
                                     <Link to={ `/dashboard/${guild.id}` }>Dashboard</Link>
                                 </Button>
                             </Box>
                             <Box p={5}>
-                                <Button bg="red.500">
+                                <Button bg="red.500" color="white">
                                     <Link to={ `/warnings/${guild.id}` }>Warnings</Link>
                                 </Button>
                             </Box>

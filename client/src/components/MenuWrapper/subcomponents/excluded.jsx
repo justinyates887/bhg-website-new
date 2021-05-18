@@ -32,12 +32,12 @@ export function FuckingHell({
                 <Box key={guild.id} w="500px" rounded='20px' overflow="hidden" boxShadow="sm" bg='gray.500' m={3}>
                     <Wrap align="center" p={2}>
                         {guildIcon(guild)}
-                        <Text fontSize="2xl" p={3}>{ guild.name }</Text>
+                        <Text fontSize="2xl" p={3} color="white">{ guild.name }</Text>
                         {isOwner(guild)}
                     </Wrap>
                     <Divider orientation="horizontal" />
                     <Box p={5}>
-                        <Button bg="gray.700">
+                        <Button bg="gray.700" color="white">
                             <Link to={'https://discord.com/api/oauth2/authorize?client_id=794674548875460649&permissions=8&scope=bot'}
                             >Invite
                             </Link>
