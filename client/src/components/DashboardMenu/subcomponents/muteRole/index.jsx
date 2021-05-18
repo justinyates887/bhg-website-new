@@ -1,6 +1,7 @@
 import React from 'react'
 import { Formik } from 'formik'
 import { Button, Select, Text } from '@chakra-ui/react'
+import { color } from '../../../../utils/utils'
 
 export function MuteRoleDashboard({
     roles,
@@ -26,7 +27,7 @@ export function MuteRoleDashboard({
                                             maxWidth="350" align="center" color="white" ml={5}
                                     >
                                         {roles.map((role) => (
-                                            <option value={role.id} key={role.id}>{role.name}</option>
+                                            <option value={role.id} key={role.id} style={{color: `${color(role.color)}`, backgroundColor: "#36393f"}}>{role.name}</option>
                                         ))}
                                     </Select>
                                     <Button type="submit" children="Update Role" colorScheme="blue" p={2} m={4} />

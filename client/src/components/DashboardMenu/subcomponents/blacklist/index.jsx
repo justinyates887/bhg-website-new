@@ -14,7 +14,7 @@ export function BlacklistDashboard({
             return (
                 <HStack spacing={4} ml={4} mr={4}>
                     {blacklist.map((word) => (
-                        <Tag value={word} key={word} size={"md"} borderRadius="full" variant="solid" colorScheme="blue">
+                        <Tag value={word} key={word} size={"md"} borderRadius="full" variant="solid" color="white" style={{backgroundColor: "#36393f"}}>
                             <TagLabel>{word}</TagLabel>
                             <TagCloseButton onClick={() => {
                                 removeBlacklistWord(match.params.id, word)

@@ -26,7 +26,7 @@ export function TicketsChannelDashboard({
                                             maxWidth="350" align="center" color="white" ml={5}
                                     >
                                         {channels.filter(channel => channel.type === 4).map((channel => (
-                                            <option value={channel.id} key={channel.id}>{channel.name}</option>
+                                            <option value={channel.id} key={channel.id} style={{backgroundColor: "#36393f"}}>{channel.name}</option>
                                         )))}
                                     </Select>
                                     <Button type="submit" children="Update Channel" colorScheme="blue" p={2} m={4} />
