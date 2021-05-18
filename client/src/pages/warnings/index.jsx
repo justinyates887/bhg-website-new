@@ -35,15 +35,15 @@ export function Warnings({
     return !loading && (
         <div>
             <NavHeader user={user} />
-            <Container >
+            <Container  maxW="container.xl" align="center">
             {warnings.map((obj, i) => {
                 const [warning] = obj.warnings
                 return (
-                    <Box key={i} w="600px" rounded='20px' overflow="hidden" boxShadow="sm" bg='gray.500' m={3}>
-                        <Text>Offender: {warning.target}</Text>
-                        <Text color="white">Author: {warning.author}</Text>
-                        <Text>Reason: {warning.warnReason}</Text>
-                        <Text>Date: {warning.timestamp}</Text>
+                    <Box align="left" key={i} w="600px" rounded='20px' overflow="hidden" boxShadow="sm" bg='gray.500' m={3} p={5}>
+                        <Text color="red.700" fontSize="2xl">Offender: {warning.target}</Text>
+                        <Text color="white" fontSize="xl">Author: {warning.author}</Text>
+                        <Text color="blue.700" fontSize="lg">Reason: {warning.warnReason}</Text>
+                        <Text color="white">Date: {warning.timestamp}</Text>
                     </Box>
                 )
             })}

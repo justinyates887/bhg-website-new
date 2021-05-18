@@ -9,7 +9,8 @@ import { DefaultRoleDashboard,
     SuggestionChannelDashboard,
     ApprovedSuggestionChannelDashboard,
     AntiadDashboard,
-    BlacklistDashboard
+    BlacklistDashboard,
+    AdminRolesDashboard
 } from './subcomponents'
 
 export function DashboardMenu({
@@ -32,9 +33,17 @@ export function DashboardMenu({
     blacklist,
     setBlacklist,
     updateBlacklist,
+    adminRoles,
+    setAdminRoles,
+    updateAdminRoles
 }) {
     return (
         <React.Fragment>
+            <SimpleGrid columns={1}>
+                <Box w="1240px" rounded='20px' overflow="hidden" boxShadow="sm" bg='gray.500' m={3}>
+                    <AdminRolesDashboard roles={roles} updateAdminRoles={updateAdminRoles} adminRoles={adminRoles} match={match} setAdminRoles={setAdminRoles}/>
+                </Box>
+            </SimpleGrid>
             <SimpleGrid columns={{sm:1, md:2, lg:3}}>
                 <Box w="400px" rounded='20px' overflow="hidden" boxShadow="sm" bg='gray.500' m={3}>
                     <PrefixDashboard prefix={prefix} updatePrefix={updatePrefix} />

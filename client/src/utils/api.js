@@ -164,6 +164,35 @@ export function removeBlacklistWord(guildID, word) {
     )
 }
 
+export function getAdminRoles(guildID) {
+    return axios.get(
+        `http://localhost:8080/api/discord/guilds/${guildID}/admin-config`, {
+        withCredentials: true
+    }).catch((err) => {
+        console.log(err)
+    })
+}
+
+export function updateAdminRoles(guildID, roles) {
+    return axios.put(
+        `http://localhost:8080/api/discord/guilds/${guildID}/admin-roles`, {
+            roles
+        }, {
+            withCredentials: true
+        }
+    )
+}
+
+export function removeAdminRole(guildID, role) {
+    return axios.put(
+        `http://localhost:8080/api/discord/guilds/${guildID}/admin-role/remove`, {
+            role
+        }, {
+            withCredentials: true
+        }
+    )
+}
+
 export function getWarnings(guildID) {
     return axios.get(
         `http://localhost:8080/api/discord/guilds/${guildID}/warnings`, {

@@ -1,5 +1,5 @@
 import React from 'react'
-import { getGuildPrefix, getGuildRoles, getUserDetails, getGuildChannels, getGuildBlacklist, getGuilds } from '../../utils/api'
+import { getGuildPrefix, getGuildRoles, getUserDetails, getGuildChannels, getGuildBlacklist, getGuilds, getAdminRoles } from '../../utils/api'
 import { DashboardMenu } from '../../components'
 import { NavHeader } from '../../components/index'
 import { updateGuildPrefix, 
@@ -11,7 +11,8 @@ import { updateGuildPrefix,
     updateSuggestionChannel,
     updateApprovedSuggestionChannel,
     updateAntiad,
-    updateBlacklist
+    updateBlacklist,
+    updateAdminRoles
 } from '../../utils/api'
 import { Container, Text, Wrap, Avatar, Center } from '@chakra-ui/react'
 export function Dashboard({
@@ -25,6 +26,7 @@ export function Dashboard({
     const [channels, setChannels] = React.useState([])
     const [blacklist, setBlacklist] = React.useState([])
     const [userGuilds, setUserGuilds] = React.useState([])
+    const [adminRoles, setAdminRoles] = React.useState([])
 
     React.useEffect( () => {
         getUserDetails()
@@ -45,6 +47,9 @@ export function Dashboard({
             return getGuilds()
         }).then(({ data }) => {
             setUserGuilds(data)
+            return getAdminRoles(match.params.id)
+        }).then(({ data }) => {
+            setAdminRoles(data)
             setLoading(false)
         }).catch((err) => {
             history.push('/api/discord/auth')
@@ -94,6 +99,10 @@ export function Dashboard({
 
     const updateBlacklistParent = async (words) => {
         updateBlacklist(match.params.id, words)
+    }
+
+    const updateAdminRolesParent = async (roles) => {
+        updateAdminRoles(match.params.id, roles)
     }
 
     function thisGuild(){
@@ -150,6 +159,9 @@ export function Dashboard({
                     updateBlacklist={updateBlacklistParent}
                     blacklist={blacklist}
                     setBlacklist={setBlacklist}
+                    adminRoles={adminRoles}
+                    setAdminRoles={setAdminRoles}
+                    updateAdminRoles={updateAdminRolesParent}
                 />
             </Container>
         </div>

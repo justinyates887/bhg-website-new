@@ -293,5 +293,57 @@ router.put('/guilds/:guildID/blacklist/remove', async (req, res) => {
     }
 })
 
+//
+
+router.get('/guilds/:guildID/admin-config', async (req, res) => {
+    const { guildID } = req.params
+    const adminRoles = await guildRolesSchema.findOne({ _id: guildID })
+    return adminRoles ? res.send(adminRoles.admin) : res.send([])
+}) 
+
+router.put('/guilds/:guildID/admin-roles', async (req, res) => {
+    const { roles } = req.body
+    if(!roles) return res.status(400).send({ msg: "Bad Request" })
+    const { guildID } = req.params;
+    try{
+        const update = await guildRolesSchema.findOneAndUpdate({
+            _id: guildID
+        }, {
+            $push: {
+                admin: roles
+            }
+        },{
+            upsert: true,
+            new: true
+        }).exec()
+        return update ? res.send(update) : res.status(400).send({ msg: "Bad Request" })
+    }catch(err){
+        console.log(err)
+        res.status(500).send({ msg: "Internal Server Error" })
+    }
+})
+
+router.put('/guilds/:guildID/admin-role/remove', async (req, res) => {
+    const { role } = req.body
+    if(!role) return res.status(400).send({ msg: "Bad Request" })
+    const { guildID } = req.params;
+    try{
+        const update = await guildRolesSchema.findOneAndUpdate({
+            _id: guildID
+        }, {
+            $pull: {
+                admin: role
+            }
+        },{
+            upsert: true,
+            new: true
+        }).exec()
+        return update ? res.send(update) : res.status(400).send({ msg: "Bad Request" })
+    }catch(err){
+        console.log(err)
+        res.status(500).send({ msg: "Internal Server Error" })
+    }
+})
+
 
 module.exports = router
