@@ -24,7 +24,7 @@ export function LogsChannelDashboard({
                                             onChange={props.handleChange}
                                             maxWidth="350" align="center" color="white" ml={5}
                                     >
-                                        {channels.map((channel) => (
+                                        {channels.filter(channel => channel.type === 0).map((channel) => (
                                             <option value={channel.id} key={channel.id} style={{backgroundColor: "#36393f"}}>{channel.name}</option>
                                         ))}
                                     </Select>

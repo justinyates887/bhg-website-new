@@ -25,7 +25,7 @@ router.get('/guilds', async (req, res) => {
         const mutualGuilds = getMutualGuilds(userGuilds, guilds)
         res.send(mutualGuilds)
     } else {
-        return res.status(401).send({ msg: 'Unauthorized' })
+        return res.sendStatus(401).send({ msg: 'Unauthorized' })
     }
 })
 
@@ -49,7 +49,7 @@ router.get('/guilds/:guildID/prefixConfig', async (req, res) => {
 router.put('/guilds/:guildID/prefix', async (req, res) => {
     const { prefix } = req.body
     const { guildID } = req.params
-    if(!prefix) return res.status(400).send({ msg: 'Prefix Required' })
+    if(!prefix) return res.sendStatus(400).send({ msg: 'Prefix Required' })
     const update = await commandPrefixSchema.findOneAndUpdate({
         _id: guildID
     },{
@@ -58,7 +58,7 @@ router.put('/guilds/:guildID/prefix', async (req, res) => {
         upsert: true,
         new: true
     }).exec()
-    return update ? res.send(update) : res.status(400).send({ msg: 'Could not find database document' })
+    return update ? res.send(update) : res.sendStatus(400).send({ msg: 'Could not find database document' })
 })
 
 router.get('/guilds/:guildID/roles', async (req, res) => {
@@ -68,13 +68,13 @@ router.get('/guilds/:guildID/roles', async (req, res) => {
         res.send(roles)
     } catch(err){
         console.log(err)
-        res.status(500).send({ msg: "Internal Server Error" })
+        res.sendStatus(500).send({ msg: "Internal Server Error" })
     }
 })
 
 router.put('/guilds/:guildID/roles/default', async (req, res) => {
     const { roleID } = req.body
-    if(!roleID) return res.status(400).send({ msg: "Bad Request" })
+    if(!roleID) return res.sendStatus(400).send({ msg: "Bad Request" })
     const { guildID } = req.params;
     try{
         const update = await guildRolesSchema.findOneAndUpdate({
@@ -85,16 +85,16 @@ router.put('/guilds/:guildID/roles/default', async (req, res) => {
             upsert: true,
             new: true
         }).exec()
-        return update ? res.send(update) : res.status(400).send({ msg: "Bad Request" })
+        return update ? res.send(update) : res.sendStatus(400).send({ msg: "Bad Request" })
     }catch(err){
         console.log(err)
-        res.status(500).send({ msg: "Internal Server Error" })
+        res.sendStatus(500).send({ msg: "Internal Server Error" })
     }
 })
 
 router.put('/guilds/:guildID/roles/mute', async (req, res) => {
     const { roleID } = req.body
-    if(!roleID) return res.status(400).send({ msg: "Bad Request" })
+    if(!roleID) return res.sendStatus(400).send({ msg: "Bad Request" })
     const { guildID } = req.params;
     try{
         const update = await guildRolesSchema.findOneAndUpdate({
@@ -105,10 +105,10 @@ router.put('/guilds/:guildID/roles/mute', async (req, res) => {
             upsert: true,
             new: true
         }).exec()
-        return update ? res.send(update) : res.status(400).send({ msg: "Bad Request" })
+        return update ? res.send(update) : res.sendStatus(400).send({ msg: "Bad Request" })
     }catch(err){
         console.log(err)
-        res.status(500).send({ msg: "Internal Server Error" })
+        res.sendStatus(500).send({ msg: "Internal Server Error" })
     }
 })
 
@@ -119,13 +119,13 @@ router.get('/guilds/:guildID/channels', async (req, res) => {
         res.send(channels)
     } catch(err){
         console.log(err)
-        res.status(500).send({ msg: "Internal Server Error" })
+        res.sendStatus(500).send({ msg: "Internal Server Error" })
     }
 })
 
 router.put('/guilds/:guildID/channels/welcome', async (req, res) => {
     const { channelID } = req.body
-    if(!channelID) return res.status(400).send({ msg: "Bad Request" })
+    if(!channelID) return res.sendStatus(400).send({ msg: "Bad Request" })
     const { guildID } = req.params;
     try{
         const update = await welcomeChannelSchema.findOneAndUpdate({
@@ -136,16 +136,16 @@ router.put('/guilds/:guildID/channels/welcome', async (req, res) => {
             upsert: true,
             new: true
         }).exec()
-        return update ? res.send(update) : res.status(400).send({ msg: "Bad Request" })
+        return update ? res.send(update) : res.sendStatus(400).send({ msg: "Bad Request" })
     }catch(err){
         console.log(err)
-        res.status(500).send({ msg: "Internal Server Error" })
+        res.sendStatus(500).send({ msg: "Internal Server Error" })
     }
 })
 
 router.put('/guilds/:guildID/channels/logs', async (req, res) => {
     const { channelID } = req.body
-    if(!channelID) return res.status(400).send({ msg: "Bad Request" })
+    if(!channelID) return res.sendStatus(400).send({ msg: "Bad Request" })
     const { guildID } = req.params;
     try{
         const update = await logsChannelSchema.findOneAndUpdate({
@@ -156,16 +156,16 @@ router.put('/guilds/:guildID/channels/logs', async (req, res) => {
             upsert: true,
             new: true
         }).exec()
-        return update ? res.send(update) : res.status(400).send({ msg: "Bad Request" })
+        return update ? res.send(update) : res.sendStatus(400).send({ msg: "Bad Request" })
     }catch(err){
         console.log(err)
-        res.status(500).send({ msg: "Internal Server Error" })
+        res.sendStatus(500).send({ msg: "Internal Server Error" })
     }
 })
 
 router.put('/guilds/:guildID/channels/tickets', async (req, res) => {
     const { channelID } = req.body
-    if(!channelID) return res.status(400).send({ msg: "Bad Request" })
+    if(!channelID) return res.sendStatus(400).send({ msg: "Bad Request" })
     const { guildID } = req.params;
     try{
         const update = await ticketsCategorySchema.findOneAndUpdate({
@@ -176,16 +176,16 @@ router.put('/guilds/:guildID/channels/tickets', async (req, res) => {
             upsert: true,
             new: true
         }).exec()
-        return update ? res.send(update) : res.status(400).send({ msg: "Bad Request" })
+        return update ? res.send(update) : res.sendStatus(400).send({ msg: "Bad Request" })
     }catch(err){
         console.log(err)
-        res.status(500).send({ msg: "Internal Server Error" })
+        res.sendStatus(500).send({ msg: "Internal Server Error" })
     }
 })
 
 router.put('/guilds/:guildID/channels/suggestion', async (req, res) => {
     const { channelID } = req.body
-    if(!channelID) return res.status(400).send({ msg: "Bad Request" })
+    if(!channelID) return res.sendStatus(400).send({ msg: "Bad Request" })
     const { guildID } = req.params;
     try{
         const update = await suggestChannelsSchema.findOneAndUpdate({
@@ -196,16 +196,16 @@ router.put('/guilds/:guildID/channels/suggestion', async (req, res) => {
             upsert: true,
             new: true
         }).exec()
-        return update ? res.send(update) : res.status(400).send({ msg: "Bad Request" })
+        return update ? res.send(update) : res.sendStatus(400).send({ msg: "Bad Request" })
     }catch(err){
         console.log(err)
-        res.status(500).send({ msg: "Internal Server Error" })
+        res.sendStatus(500).send({ msg: "Internal Server Error" })
     }
 })
 
 router.put('/guilds/:guildID/channels/approved-suggestion', async (req, res) => {
     const { channelID } = req.body
-    if(!channelID) return res.status(400).send({ msg: "Bad Request" })
+    if(!channelID) return res.sendStatus(400).send({ msg: "Bad Request" })
     const { guildID } = req.params;
     try{
         const update = await suggestChannelsSchema.findOneAndUpdate({
@@ -216,16 +216,16 @@ router.put('/guilds/:guildID/channels/approved-suggestion', async (req, res) => 
             upsert: true,
             new: true
         }).exec()
-        return update ? res.send(update) : res.status(400).send({ msg: "Bad Request" })
+        return update ? res.send(update) : res.sendStatus(400).send({ msg: "Bad Request" })
     }catch(err){
         console.log(err)
-        res.status(500).send({ msg: "Internal Server Error" })
+        res.sendStatus(500).send({ msg: "Internal Server Error" })
     }
 })
 
 router.put('/guilds/:guildID/antiad', async (req, res) => {
     const { desired } = req.body
-    if(!desired) return res.status(400).send({ msg: "Bad Request" })
+    if(!desired) return res.sendStatus(400).send({ msg: "Bad Request" })
     const { guildID } = req.params;
     try{
         const update = await antiAdSchema.findOneAndUpdate({
@@ -236,10 +236,10 @@ router.put('/guilds/:guildID/antiad', async (req, res) => {
             upsert: true,
             new: true
         }).exec()
-        return update ? res.send(update) : res.status(400).send({ msg: "Bad Request" })
+        return update ? res.send(update) : res.sendStatus(400).send({ msg: "Bad Request" })
     }catch(err){
         console.log(err)
-        res.status(500).send({ msg: "Internal Server Error" })
+        res.sendStatus(500).send({ msg: "Internal Server Error" })
     }
 })
 
@@ -250,8 +250,9 @@ router.get('/guilds/:guildID/blacklist-config', async (req, res) => {
 }) 
 
 router.put('/guilds/:guildID/blacklist', async (req, res) => {
+    //you can add many words
     const { words } = req.body
-    if(!words) return res.status(400).send({ msg: "Bad Request" })
+    if(!words) return res.sendStatus(400).send({ msg: "Bad Request" })
     const { guildID } = req.params;
     try{
         const update = await blacklistSchema.findOneAndUpdate({
@@ -264,16 +265,17 @@ router.put('/guilds/:guildID/blacklist', async (req, res) => {
             upsert: true,
             new: true
         }).exec()
-        return update ? res.send(update) : res.status(400).send({ msg: "Bad Request" })
+        return update ? res.send(update) : res.sendStatus(400).send({ msg: "Bad Request" })
     }catch(err){
         console.log(err)
-        res.status(500).send({ msg: "Internal Server Error" })
+        res.sendStatus(500).send({ msg: "Internal Server Error" })
     }
 })
 
 router.put('/guilds/:guildID/blacklist/remove', async (req, res) => {
+    //you can only remove one word
     const { word } = req.body
-    if(!word) return res.status(400).send({ msg: "Bad Request" })
+    if(!word) return res.sendStatus(400).send({ msg: "Bad Request" })
     const { guildID } = req.params;
     try{
         const update = await blacklistSchema.findOneAndUpdate({
@@ -286,10 +288,10 @@ router.put('/guilds/:guildID/blacklist/remove', async (req, res) => {
             upsert: true,
             new: true
         }).exec()
-        return update ? res.send(update) : res.status(400).send({ msg: "Bad Request" })
+        return update ? res.send(update) : res.sendStatus(400).send({ msg: "Bad Request" })
     }catch(err){
         console.log(err)
-        res.status(500).send({ msg: "Internal Server Error" })
+        res.sendStatus(500).send({ msg: "Internal Server Error" })
     }
 })
 
@@ -303,7 +305,7 @@ router.get('/guilds/:guildID/admin-config', async (req, res) => {
 
 router.put('/guilds/:guildID/admin-roles', async (req, res) => {
     const { roles } = req.body
-    if(!roles) return res.status(400).send({ msg: "Bad Request" })
+    if(!roles) return res.sendStatus(400).send({ msg: "Bad Request" })
     const { guildID } = req.params;
     try{
         const update = await guildRolesSchema.findOneAndUpdate({
@@ -316,16 +318,16 @@ router.put('/guilds/:guildID/admin-roles', async (req, res) => {
             upsert: true,
             new: true
         }).exec()
-        return update ? res.send(update) : res.status(400).send({ msg: "Bad Request" })
+        return update ? res.send(update) : res.sendStatus(400).send({ msg: "Bad Request" })
     }catch(err){
         console.log(err)
-        res.status(500).send({ msg: "Internal Server Error" })
+        res.sendStatus(500).send({ msg: "Internal Server Error" })
     }
 })
 
 router.put('/guilds/:guildID/admin-role/remove', async (req, res) => {
     const { role } = req.body
-    if(!role) return res.status(400).send({ msg: "Bad Request" })
+    if(!role) return res.sendStatus(400).send({ msg: "Bad Request" })
     const { guildID } = req.params;
     try{
         const update = await guildRolesSchema.findOneAndUpdate({
@@ -338,10 +340,37 @@ router.put('/guilds/:guildID/admin-role/remove', async (req, res) => {
             upsert: true,
             new: true
         }).exec()
-        return update ? res.send(update) : res.status(400).send({ msg: "Bad Request" })
+        return update ? res.send(update) : res.sendStatus(400).send({ msg: "Bad Request" })
     }catch(err){
         console.log(err)
-        res.status(500).send({ msg: "Internal Server Error" })
+        res.sendStatus(500).send({ msg: "Internal Server Error" })
+    }
+})
+
+router.put('/guilds/:guildID/warnings/delete', async (req, res) => {
+    const { guildID } = req.params
+    console.log(req.body)
+    const { wID } = req.body
+    const { uID } = req.body
+
+    try{
+        const result = warningSchema.findOneAndUpdate({
+            _id: uID,
+            gID: guildID,
+        }, {
+            $pull: {
+                warnings: {
+                    wID
+                }
+            }
+        }, {
+            upsert: true,
+            new: true
+        }).exec()
+        return result ? res.send(200) : res.sendStatus(400).send({ msg: "Bad Request" })
+    } catch(err){
+        console.log(err)
+        res.sendStatus(500).send({ msg: "Internal Server Error" })
     }
 })
 

@@ -1,5 +1,4 @@
 const router = require("express").Router();
-const path = require('path');
 const auth = require('./auth')
 const discord = require('./discord')
 

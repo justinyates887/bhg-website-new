@@ -29,7 +29,7 @@ export function FuckingHell({
         <Box p={3}>
             <SimpleGrid columns={ {sm: 1, md: 1, lg: 2} }>
             {guilds.map((guild) => (
-                <Box key={guild.id} w="500px" rounded='20px' overflow="hidden" boxShadow="sm" bg='gray.500' m={3}>
+                <Box key={guild.id} w="500px" rounded='20px' overflow="hidden" boxShadow="sm" bg='#2c2f33' m={3}>
                     <Wrap align="center" p={2}>
                         {guildIcon(guild)}
                         <Text fontSize="2xl" p={3} color="white">{ guild.name }</Text>
@@ -37,7 +37,7 @@ export function FuckingHell({
                     </Wrap>
                     <Divider orientation="horizontal" />
                     <Box p={5}>
-                        <Button bg="gray.700" color="white">
+                        <Button bg="#99AAB5" color="white">
                             <Link to={'https://discord.com/api/oauth2/authorize?client_id=794674548875460649&permissions=8&scope=bot'}
                             >Invite
                             </Link>

@@ -28,7 +28,7 @@ export function Included({
             <Box p={3}>
                 <SimpleGrid columns={ {sm: 1, md: 1, lg: 2} }>
                 {guilds.map((guild) => (
-                    <Box key={guild.id} w="500px" rounded='20px' overflow="hidden" boxShadow="sm" bg='gray.500' m={3}>
+                    <Box key={guild.id} w="500px" rounded='20px' overflow="hidden" boxShadow="sm" bg='#2c2f33' m={3}>
                         <Wrap align="center" p={2}>
                             {guildIcon(guild)}
                             <Text fontSize="2xl" p={3} color="white">{ guild.name }</Text>

@@ -40,45 +40,45 @@ export function DashboardMenu({
     return (
         <React.Fragment>
             <SimpleGrid columns={1}>
-                <Box w="1240px" rounded='20px' overflow="hidden" boxShadow="sm" bg='gray.500' m={3}>
+                <Box w="1240px" rounded='20px' overflow="hidden" boxShadow="sm" bg='#2c2f33' m={3}>
                     <AdminRolesDashboard roles={roles} updateAdminRoles={updateAdminRoles} adminRoles={adminRoles} match={match} setAdminRoles={setAdminRoles}/>
                 </Box>
             </SimpleGrid>
             <SimpleGrid columns={{sm:1, md:2, lg:3}}>
-                <Box w="400px" rounded='20px' overflow="hidden" boxShadow="sm" bg='gray.500' m={3}>
+                <Box w="400px" rounded='20px' overflow="hidden" boxShadow="sm" bg='#2c2f33' m={3}>
                     <PrefixDashboard prefix={prefix} updatePrefix={updatePrefix} />
                 </Box>
-                <Box w="400px" rounded='20px' overflow="hidden" boxShadow="sm" bg='gray.500' m={3}>
+                <Box w="400px" rounded='20px' overflow="hidden" boxShadow="sm" bg='#2c2f33' m={3}>
                     <DefaultRoleDashboard roles={roles} updateDefaultRole={updateDefaultRole} />
                 </Box>
-                <Box w="400px" rounded='20px' overflow="hidden" boxShadow="sm" bg='gray.500' m={3}>
+                <Box w="400px" rounded='20px' overflow="hidden" boxShadow="sm" bg='#2c2f33' m={3}>
                     <MuteRoleDashboard roles={roles} updateMuteRole={updateMuteRole} />
                 </Box>
             </SimpleGrid>
             <SimpleGrid columns={{sm:1, md:2, lg:3}}>
-                <Box w="400px" rounded='20px' overflow="hidden" boxShadow="sm" bg='gray.500' m={3}>
+                <Box w="400px" rounded='20px' overflow="hidden" boxShadow="sm" bg='#2c2f33' m={3}>
                     <WelcomeChannelDashboard channels={channels} updateWelcomeChannel={updateWelcomeChannel} />
                 </Box>
-                <Box w="400px" rounded='20px' overflow="hidden" boxShadow="sm" bg='gray.500' m={3}>
+                <Box w="400px" rounded='20px' overflow="hidden" boxShadow="sm" bg='#2c2f33' m={3}>
                     <LogsChannelDashboard channels={channels} updateLogsChannel={updateLogsChannel} />
                 </Box>
-                <Box w="400px" rounded='20px' overflow="hidden" boxShadow="sm" bg='gray.500' m={3}>
+                <Box w="400px" rounded='20px' overflow="hidden" boxShadow="sm" bg='#2c2f33' m={3}>
                     <TicketsChannelDashboard channels={channels} updateTicketsChannel={updateTicketsChannel} />
                 </Box>
             </SimpleGrid>
             <SimpleGrid columns={{sm:1, md:2, lg:3}}>
-                <Box w="400px" rounded='20px' overflow="hidden" boxShadow="sm" bg='gray.500' m={3}>
+                <Box w="400px" rounded='20px' overflow="hidden" boxShadow="sm" bg='#2c2f33' m={3}>
                     <SuggestionChannelDashboard channels={channels} updateSuggestionChannel={updateSuggestionChannel} />
                 </Box>
-                <Box w="400px" rounded='20px' overflow="hidden" boxShadow="sm" bg='gray.500' m={3}>
+                <Box w="400px" rounded='20px' overflow="hidden" boxShadow="sm" bg='#2c2f33' m={3}>
                     <ApprovedSuggestionChannelDashboard channels={channels} updateApprovedSuggestionChannel={updateApprovedSuggestionChannel} />
                 </Box>
-                <Box w="400px" rounded='20px' overflow="hidden" boxShadow="sm" bg='gray.500' m={3}>
+                <Box w="400px" rounded='20px' overflow="hidden" boxShadow="sm" bg='#2c2f33' m={3}>
                     <AntiadDashboard updateAntiad={updateAntiad} />
                 </Box>
             </SimpleGrid>
             <SimpleGrid columns={1}>
-                <Box w="1240px" rounded='20px' overflow="hidden" boxShadow="sm" bg='gray.500' m={3}>
+                <Box w="1240px" rounded='20px' overflow="hidden" boxShadow="sm" bg='#2c2f33' m={3}>
                     <BlacklistDashboard updateBlacklist={updateBlacklist} blacklist={blacklist} match={match} setBlacklist={setBlacklist}/>
                 </Box>
             </SimpleGrid>

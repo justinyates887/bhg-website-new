@@ -200,3 +200,13 @@ export function getWarnings(guildID) {
         }
     )
 }
+
+export function deleteWarning(wID, uID, guildID){
+    return axios.put(
+        `http://localhost:8080/api/discord/guilds/${guildID}/warnings/delete`, {
+            wID, uID
+        }, {
+            withCredentials: true
+        }
+    )
+}
