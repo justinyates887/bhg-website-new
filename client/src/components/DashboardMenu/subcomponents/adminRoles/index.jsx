@@ -27,7 +27,7 @@ export function AdminRolesDashboard({
                                 <TagLabel>{yeet.name}</TagLabel>
                                 <TagCloseButton onClick={() => {
                                     removeAdminRole(match.params.id, yeet.id)
-                                    setAdminRoles(adminRoles => adminRoles.filter(roleList => yeet.id != roleList))
+                                    setAdminRoles(adminRoles => adminRoles.filter(roleList => yeet.id !== roleList))
                                     }}/>
                             </Tag>
                         )

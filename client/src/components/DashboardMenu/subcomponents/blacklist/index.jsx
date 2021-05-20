@@ -18,7 +18,7 @@ export function BlacklistDashboard({
                             <TagLabel>{word}</TagLabel>
                             <TagCloseButton onClick={() => {
                                 removeBlacklistWord(match.params.id, word)
-                                setBlacklist(blacklist => blacklist.filter(wordList => word != wordList))
+                                setBlacklist(blacklist => blacklist.filter(wordList => word !== wordList))
                                 }}/>
                         </Tag>
                     ))}

@@ -1,6 +1,6 @@
 import React from 'react'
 import { Formik } from 'formik'
-import { Input, Button, Text, Box } from '@chakra-ui/react'
+import { Input, Button, Text } from '@chakra-ui/react'
 
 export function PrefixDashboard({
     prefix,

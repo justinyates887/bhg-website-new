@@ -5,7 +5,7 @@ import React from 'react'
 import { NavHeader } from '../../components/index'
 import { getUserDetails, getMyGuilds } from '../../utils/api'
 
-export function Landing({history}){
+export function Landing({ history }){
     
     const [user, setUser] = React.useState(null)
     const [loading, setLoading] = React.useState(true)

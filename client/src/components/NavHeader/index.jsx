@@ -7,7 +7,6 @@ import {
     Box,
     Avatar,
     Wrap,
-    WrapItem,
     SimpleGrid,
     Center,
     Text

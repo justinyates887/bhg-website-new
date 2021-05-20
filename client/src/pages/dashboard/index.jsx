@@ -59,7 +59,7 @@ export function Dashboard({
 
     const updateGuildPrefixParent = async (prefix) => {
         try{
-            const update = await updateGuildPrefix(match.params.id, prefix)
+            updateGuildPrefix(match.params.id, prefix)
         }catch(err){
             console.log(err)
         }
