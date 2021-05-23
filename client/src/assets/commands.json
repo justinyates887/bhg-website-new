@@ -2,35 +2,43 @@
     "setup": {
         "blacklist": {
             "name": "blacklist",
-            "description": "Allows you to black certain words from being sent in your server."
+            "description": "Allows you to black certain words from being sent in your server.",
+            "usage": "<prefix>blacklist <word1 word2 word3 etc...> (It will ask you if you want to warn users or just delete)"
         },
         "serverstats": {
             "name": "serverstats",
-            "description": "Adds private voice channels under a \"Server Stats\" category showing member count, channel count, role count, and bot count."
+            "description": "Adds private voice channels under a \"Server Stats\" category showing member count, channel count, role count, and bot count.",
+            "usage": "<prefix>serverstats"
         },
         "setadminroles": {
             "name": "setadminroles",
-            "description": "Allows server owner to set which roles they want to be able to use the admin commands."
+            "description": "Allows server owner to set which roles they want to be able to use the admin commands.",
+            "usage": "<prefix>setadminroles <@role1 @role2 etc...>"
         },
         "setapprovalchannel": {
             "name": "setapprovalchannel",
-            "description": "Sets channel where approved suggestions will go."
+            "description": "Sets channel where approved suggestions will go.",
+            "usage": "<prefix>setapprovalchannel <#channel>"
         },
         "setsuggestchannel": {
             "name": "setsuggestchannel",
-            "description": "Sets channel where your users can send suggestions with the suggest command."
+            "description": "Sets channel where your users can send suggestions with the suggest command.",
+            "usage": "<prefix>setsuggestchannel <#channel>"
         },
         "setlogschannel": {
             "name": "setlogschannel",
-            "description": "Sets channel where the bot's logs will go to."
+            "description": "Sets channel where the bot's logs will go to.",
+            "usage": "<prefix>setlogschannel <#channel>"
         }, 
         "setmemberrole": {
             "name": "setmemberrole",
-            "description": "Sets the base member role that will be given to new members OR verified members."
+            "description": "Sets the base member role that will be given to new members OR verified members.",
+            "usage": "<prefix>setmemberrole <@role>"
         },
         "setmuterole": {
             "name": "setmuterole",
-            "description": "Sets the role to give members when the mute command is ran."
+            "description": "Sets the role to give members when the mute command is ran.",
+            "usage": "<prefix>setmuterole <@role>"
         },
         "setprefix": {
             "name": "setprefix",
@@ -45,7 +53,7 @@
         "welcome": {
             "name": "welcome",
             "description": "Sets welcome channel for welcome cards",
-            "usage": ""
+            "usage": "<prefix>welcome <#channel>"
         }, 
         "antiad": {
             "name": "antiad",
@@ -58,6 +66,321 @@
             "name": "ban",
             "description": "Permanantly bans targeted user from you server.",
             "usage": "<prefix>ban <@target>"
+        },
+        "giverole": {
+            "name": "giverole",
+            "description": "Gives a targeted user a role",
+            "usage": "<prefix>giverole <@role OR role(case sensitive) @target>"
+        },
+        "kick": {
+            "name": "kick",
+            "description": "Kicks a user from your server",
+            "usage": "<prefix>kick <@target>"
+        },
+        "mute": {
+            "name": "mute",
+            "description": "Mutes a targeted member for your specified amount of time (Requires mute role setup)",
+            "usage": "<prefix>mute <@target [number of minutes OR nothing for indefinite mute]>"
+        },
+        "removerole": {
+            "name": "removerole",
+            "description": "Removes a role form a user.",
+            "usage": "<prefix>removerole <@role OR role(case sensitive) @target>"
+        },
+        "warn": {
+            "name": "warn",
+            "description": "Gives a user a warning for your provided reason and stores it.",
+            "usage": "<prefix>warn <@target reason>"
+        },
+        "warnlist": {
+            "name": "warnlist",
+            "description": "Shows the amount of warnings a specified user has.",
+            "usage": "<prefix>warnlist <@target>"
+        },
+        "checklist": {
+            "name": "checklist",
+            "description": "Shows what customization options you have configured.",
+            "usage": "<prefix>checklist"
+        },
+        "announce": {
+            "name": "announce",
+            "description": "Anncounces a message in an embed to your selected channel.",
+            "usage": "<prefix>announce <#channel optional[@target member/role] message>"
+        },
+        "channelcreate": {
+            "name": "channelcreate",
+            "description": "Creates a channel in your server",
+            "usage": "<prefix>channelcreate <voice/text name>"
+        },
+        "createrole": {
+            "name": "createrole",
+            "description": "Creates a role in your server",
+            "usage": "<prefix>createrole <optional[#hexColor] name>"
+        },
+        "deletechannel": {
+            "name": "deletechannel",
+            "description": "Deletes a targeted channel in your server",
+            "usage": "<prefix>deletechannel <#target>"
+        },
+        "deleterole": {
+            "name": "deleterole",
+            "description": "Deletes a targeted role in your server",
+            "usage": "<prefix>deleterole <@role>"
+        },
+        "leaderboard": {
+            "name": "leaderboard",
+            "description": "Shows the amount of invites each user has with a maximum of 25 users.",
+            "usage": "<prefix>leaderboard <optional[number you want to return]>"
+        },
+        "nuke": {
+            "name": "nuke",
+            "description": "Deletes and copies a targeted text channel or the channel command is ran in.",
+            "usage": "<prefix>nuke <optional[target]>"
+        },
+        "purge": {
+            "name": "purge",
+            "description": "Deletes up to 100 messages less than 2 weeks old in the channel command is ran in",
+            "usage": "<prefix>purge <number of messages>"
+        }
+    }, 
+    "fun": {
+        "av": {
+            "name": "av",
+            "description": "Sends an image of the avatar for the specified user",
+            "usage": "<prefix>av <@target>"
+        },
+        "roll": {
+            "name": "roll",
+            "description": "Rolls a specified dice and modifier",
+            "usage": "<prefix>roll <d[number] optional[+ modifier]>"
+        },
+        "magic8": {
+            "name": "magic8",
+            "description": "Ask a question to the magic 8-ball",
+            "usage": "<prefix>magic8"
+        },
+        "tempconvert": {
+            "name": "tempconvert",
+            "description": "Convert a temperature to Farenheit, Celsius, or Kelvin",
+            "usage": "<prefix>tempconvert (await prompt)"
+        },
+        "aww": {
+            "name": "aww",
+            "description": "Sends a meme from r/aww",
+            "usage": "<prefix>aww"
+        },
+        "meme": {
+            "name": "meme",
+            "description": "Sends a meme from r/meme",
+            "usage": "<prefix>meme"
+        },
+        "wholesome": {
+            "name": "wholesome",
+            "description": "Sends a meme from r/wholesome",
+            "usage": "<prefix>wholesome"
+        },
+        "hentai": {
+            "name": "hentai",
+            "description": "Sends an image from r/hentai (can only be sent in NSFW channels)",
+            "usage": "<prefix>hentai"
+        },
+        "reddit": {
+            "name": "reddit",
+            "description": "Choose a subreddit to send an image from",
+            "usage": "<prefix>reddit <subreddit>"
+        },
+        "csgo": {
+            "name": "csgo",
+            "description": "Sends Steam market pricing for the specified CSGO item.",
+            "usage": "<prefix>csgo (await prompt)"
+        },
+        "dota": {
+            "name": "dota",
+            "description": "Sends Steam market pricing for the specified Dota2 item.",
+            "usage": "<prefix>dota (await prompt)"
+        },
+        "tf2": {
+            "name": "tf2",
+            "description": "Sends Steam market pricing for the specified TF2 item.",
+            "usage": "<prefix>tf2 (await prompt)"
+        },
+        "rust": {
+            "name": "rust",
+            "description": "Sends Steam market pricing for the specified Rust item.",
+            "usage": "<prefix>rust (await prompt)"
+        }
+    },
+    "music": {
+        "play": {
+            "name": "play",
+            "description": "Searches YouTube for the specified request and will play it in the voice channel you are in.",
+            "usage": "<prefix>play <request>"
+        },
+        "loop": {
+            "name": "loop",
+            "description": "Loops current song infinitely.",
+            "usage": "<prefix>loop"
+        },
+        "nowplaying": {
+            "name": "nowplaying",
+            "description": "Shows the current song in the queue.",
+            "usage": "<prefix>nowplaying"
+        },
+        "pause": {
+            "name": "pause",
+            "description": "Pauses the queue.",
+            "usage": "<prefix>pause"
+        },
+        "resume": {
+            "name": "resume",
+            "description": "Resumes the queue.",
+            "usage": "<prefix>resume"
+        },
+        "skip": {
+            "name": "skip",
+            "description": "Skips the current song in the queue.",
+            "usage": "<prefix>skip"
+        },
+        "stop": {
+            "name": "stop",
+            "description": "Disconnects the bot from the voice channel.",
+            "usage": "<prefix>stop"
+        },
+        "volume": {
+            "name": "volume",
+            "description": "Adjusts the volume of the bot on a scale from 1-100",
+            "usage": "<prefix>volume <value>"
+        },
+        "filters": {
+            "name": "filters",
+            "description": "Shows you a list of filters you can add to the music playing.",
+            "usage": "<prefix>filters"
+        },
+        "filter": {
+            "name": "filter",
+            "description": "Adds specified filter to the music playing.",
+            "usage": "<prefix>filter <filter>"
+        },
+        "clear-queue": {
+            "name": "clear-queue",
+            "description": "Clears the music queue.",
+            "usage": "<prefix>clear-queue"
+        }
+    },
+    "economy": {
+        "pay": {
+            "name": "pay",
+            "description": "Pays targeted user a specified amount of coins.",
+            "usage": "<prefix>pay <@target amount>"
+        },
+        "balance": {
+            "name": "balance",
+            "description": "Shows your current coin balance in the server",
+            "usage": "<prefix>balance"
+        },
+        "addbal": {
+            "name": "addbal",
+            "description": "(Admin) Gives specified balance to user.",
+            "usage": "<prefix>addbal <@target amount>"
+        },
+        "removebal": {
+            "name": "removebal",
+            "description": "(Admin) Removes specified balance form targeted user.",
+            "usage": "<prefix>removebal <@target amount>"
+        }
+    },
+    "interaction": {
+        "invitelink": {
+            "name": "invitelink",
+            "description": "Creates a server invite link for you.",
+            "usage": "<prefix>invitelink"
+        },
+        "myinvites": {
+            "name": "myinvites",
+            "description": "Shows the amount of people who have used your invites",
+            "usage": "<prefix>myinvites"
+        },
+        "suggest": {
+            "name": "suggest",
+            "description": "Adds a formatted suggestion in the server's configured suggestion channel (requires configuration)",
+            "usage": "<prefix>suggest <suggestion>"
+        },
+        "approve": {
+            "name": "approve",
+            "description": "(Admin) Allows you to approve a suggestion and send it to the approved suggestion channel (requires configuration)",
+            "usage": "<prefix>approve <suggestionID>"
+        },
+        "delete": {
+            "name": "delete",
+            "description": "(Admin) Deletes a suggestion by suggestion ID",
+            "usage": "<prefix>delete <sID>"
+        },
+        "verify": {
+            "name": "verify",
+            "description": "Allows a user to verify to recieve the base member role (Requires base member role config and verification config).",
+            "usage": "<prefix>verify (wait for prompt)"
+        },
+        "ticket": {
+            "name": "ticket",
+            "description": "Creates a ticket in the server's tickets category (requires configuration)",
+            "usage": "<prefix>ticket"
+        },
+        "add": {
+            "name": "add",
+            "description": "(Admin) Adds a targeted user to the ticket. By default only admin roles will have access.",
+            "usage": "<prefix>add <@target>"
+        },
+        "close": {
+            "name": "close",
+            "description": "(Admin) Closes ticket",
+            "usage": "<prefix>close"
+        },
+        "upvote": {
+            "name": "upvote",
+            "description": "Adds reactions to previous message to allow for up or down voting",
+            "usage": "<prefix>upvote"
+        },
+        "level": {
+            "name": "level",
+            "description": "Shows your current level in the server",
+            "usage": "<prefix>level"
+        },
+        "startgiveaway": {
+            "name": "startgiveaway",
+            "description": "(Admin) Starts a giveaway in targeted channel",
+            "usage": "<prefix>startgiveaway (await prompt)"
+        }
+    },
+    "support": {
+        "deletedata": {
+            "name": "deletedata",
+            "description": "Your data is deleted from our database as soon as the bot leaves your guild, however, if you want to delete your data at anytime just use this command.",
+            "usage": "<prefix>deletedata"
+        },
+        "developers": {
+            "name": "developers",
+            "description": "Gives information on the developers of this bot",
+            "usage": "<prefix>developers"
+        },
+        "adminhelp": {
+            "name": "adminhelp",
+            "description": "Shows a list of Admin commands",
+            "usage": "<prefix>adminhelp"
+        },
+        "userhelp": {
+            "name": "userhelp",
+            "description": "Shows a list of user commands",
+            "usage": "<prefix>userhelp"
+        },
+        "musichelp": {
+            "name": "musichelp",
+            "description": "Shows a list of music commands",
+            "usage": "<prefix>musichelp"
+        },
+        "invitebot": {
+            "name": "invitebot",
+            "description": "Sends you an invite link for our bot.",
+            "usage": "<prefix>invitebot"
         }
     }
 }

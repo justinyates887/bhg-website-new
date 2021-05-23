@@ -1,1 +1,7 @@
 export { SetupCommands } from './subpages/Setup'
+export { AdminCommands } from './subpages/Admin'
+export { FunCommands } from './subpages/Fun'
+export { MusicCommands } from './subpages/Music'
+export { EconomyCommands } from './subpages/Economy'
+export { InteractionCommands } from './subpages/Interaction'
+export { SupportCommands } from './subpages/Support'

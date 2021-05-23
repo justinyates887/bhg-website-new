@@ -22,7 +22,7 @@ export function Support(history){
         })
     }, [])
 
-    return (
+    return !loading && (
         <React.Fragment>
         <NavHeader user={user}/>           
             <Container maxW="container.xl">

@@ -1,7 +1,7 @@
 import './assets/styles/App.css';
 import { Switch, Route } from 'react-router-dom'
 import { Menu, Dashboard, Payment, Landing, Faq, Music, Support, Warnings } from './pages';
-import { SetupCommands } from './pages/commands';
+import { SetupCommands, AdminCommands, FunCommands, MusicCommands, EconomyCommands, InteractionCommands, SupportCommands } from './pages/commands';
 
 function App() {
   return (
@@ -16,6 +16,12 @@ function App() {
       <Route path ='/warnings/:id' exact={true} component={Warnings} />
 
       <Route path='/commands/setup' exact={true} component={SetupCommands} />
+      <Route path='/commands/admin' exact={true} component={AdminCommands} />
+      <Route path='/commands/fun' exact={true} component={FunCommands} />
+      <Route path='/commands/music' exact={true} component={MusicCommands} />
+      <Route path='/commands/economy' exact={true} component={EconomyCommands} />
+      <Route path='/commands/interaction' exact={true} component={InteractionCommands} />
+      <Route path='/commands/support' exact={true} component={SupportCommands} />
     </Switch>
   );
 }

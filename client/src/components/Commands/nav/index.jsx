@@ -7,27 +7,27 @@ export function CommandsNav(props){
         <div>
             <Box mt={5}>
                 <Center h="60px">
-                    <Breadcrumb spacing="25px" align="center" fontSize="lg" separator="  ">
+                    <Breadcrumb spacing="25px" align="center" fontSize="lg" separator="           ">
                         <BreadcrumbItem>
-                            <BreadcrumbLink href="/admin">Admin</BreadcrumbLink>
+                            <BreadcrumbLink href="/commands/admin" color="gray.300">Admin</BreadcrumbLink>
                         </BreadcrumbItem>
                         <BreadcrumbItem>
-                            <BreadcrumbLink href="/fun">Fun</BreadcrumbLink>
+                            <BreadcrumbLink href="/commands/fun" color="gray.300">Fun</BreadcrumbLink>
                         </BreadcrumbItem>
                         <BreadcrumbItem>
-                            <BreadcrumbLink href="/reddit">Reddit</BreadcrumbLink>
+                            <BreadcrumbLink href="/commands/economy" color="gray.300">Economy</BreadcrumbLink>
                         </BreadcrumbItem>
                         <BreadcrumbItem>
-                            <BreadcrumbLink href="/steam">Steam</BreadcrumbLink>
+                            <BreadcrumbLink href="/commands/music" color="gray.300">Music</BreadcrumbLink>
                         </BreadcrumbItem>
                         <BreadcrumbItem>
-                            <BreadcrumbLink href="/music">Music</BreadcrumbLink>
+                            <BreadcrumbLink href="/commands/setup" color="gray.300">Setup</BreadcrumbLink>
                         </BreadcrumbItem>
                         <BreadcrumbItem>
-                            <BreadcrumbLink href="/server">Server</BreadcrumbLink>
+                            <BreadcrumbLink href="/commands/interaction" color="gray.300">Interaction</BreadcrumbLink>
                         </BreadcrumbItem>
                         <BreadcrumbItem>
-                            <BreadcrumbLink href="/support">Support</BreadcrumbLink>
+                            <BreadcrumbLink href="/commands/support" color="gray.300">Support</BreadcrumbLink>
                         </BreadcrumbItem>
                     </Breadcrumb>
                 </Center>

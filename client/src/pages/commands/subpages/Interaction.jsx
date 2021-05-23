@@ -4,7 +4,7 @@ import {Box, Container, Divider, Text } from '@chakra-ui/react'
 import { getUserDetails } from '../../../utils/api'
 const commands = require('../../../assets/commands.json')
 
-export function SetupCommands({
+export function InteractionCommands({
     history
 }){
     const [user, setUser] = React.useState(null)
@@ -27,14 +27,14 @@ export function SetupCommands({
             <NavHeader user={user}/>
             <CommandsNav />
             <Container maxW="container.xl" align="center">
-                <Text align="center" color="white" fontSize="4xl">Setup</Text>
-                {Object.keys(commands["setup"]).map(key => {
+                <Text align="center" color="white" fontSize="4xl">Interaction</Text>
+                {Object.keys(commands["interaction"]).map(key => {
                 return (
-                    <Box align="left" key={commands.setup[key].name} w="800px" rounded='20px' overflow="hidden" boxShadow="sm" bg='#2c2f33' m={3} p={5}>
-                        <Text color="white" fontSize="2xl">{commands.setup[key].name}</Text>
+                    <Box align="left" key={commands.interaction[key].name} w="800px" rounded='20px' overflow="hidden" boxShadow="sm" bg='#2c2f33' m={3} p={5}>
+                        <Text color="white" fontSize="2xl">{commands.interaction[key].name}</Text>
                         <Divider></Divider>
-                        <Text color="gray.300" fontSize="lg">{commands.setup[key].description}</Text>
-                        <Text color="gray.500" fontSize="sm">{commands.setup[key].usage}</Text>
+                        <Text color="gray.300" fontSize="lg">{commands.interaction[key].description}</Text>
+                        <Text color="gray.500" fontSize="sm">{commands.interaction[key].usage}</Text>
                     </Box>
                 )
                 })}

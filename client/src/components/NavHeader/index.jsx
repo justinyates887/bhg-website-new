@@ -62,7 +62,7 @@ export function NavHeader({
                                     <BreadcrumbLink href="/">Home</BreadcrumbLink>
                                 </BreadcrumbItem>
                                 <BreadcrumbItem>
-                                    <BreadcrumbLink href="/commands/setup">Commands</BreadcrumbLink>
+                                    <BreadcrumbLink href="/commands/admin">Commands</BreadcrumbLink>
                                 </BreadcrumbItem>
                                 <BreadcrumbItem>
                                     <BreadcrumbLink href="/support">Support</BreadcrumbLink>
