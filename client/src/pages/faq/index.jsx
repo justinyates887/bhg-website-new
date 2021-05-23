@@ -1,3 +1,4 @@
+import { Container } from '@chakra-ui/layout'
 import React from 'react'
 import { NavHeader } from '../../components/index'
 
@@ -6,9 +7,7 @@ export function Faq(props){
     return (
         <div>
             <NavHeader />
-
-            <div className="container">
-
+            <Container>
                 <div className="row valign-wrapper">
                     <div className="col s10 offset-s1">
                         <h1 className="center-align blue-text darken-3" id="mainHead"><strong>FREQUENTLY ASKED QUESTIONS</strong></h1><br/>
@@ -129,9 +128,7 @@ export function Faq(props){
                         </a>
                     </div>
                 </div>
-
-
-            </div>
+            </Container>
         </div>
     )
 }

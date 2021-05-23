@@ -68,9 +68,6 @@ export function NavHeader({
                                     <BreadcrumbLink href="/support">Support</BreadcrumbLink>
                                 </BreadcrumbItem>
                                 <BreadcrumbItem>
-                                    <BreadcrumbLink href="/faq">FAQ</BreadcrumbLink>
-                                </BreadcrumbItem>
-                                <BreadcrumbItem>
                                     <BreadcrumbLink href="/music">Music</BreadcrumbLink>
                                 </BreadcrumbItem>
                             </Breadcrumb>

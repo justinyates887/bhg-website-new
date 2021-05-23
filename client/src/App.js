@@ -10,7 +10,6 @@ function App() {
       <Route path='/menu' exact={true} component={Menu} />
       <Route path='/payment' exact={true} component={Payment} />
       <Route path='/dashboard/:id' exact={true} component={Dashboard} />
-      <Route path='/faq' exact={true} component={Faq} />
       <Route path='/music' exact={true} component={Music} />
       <Route path='/support' exact={true} component={Support} />
       <Route path ='/warnings/:id' exact={true} component={Warnings} />
