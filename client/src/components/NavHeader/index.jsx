@@ -42,7 +42,7 @@ export function NavHeader({
                 )
             }
         }else if(!user || user === undefined) {
-            return (<BreadcrumbLink href="http://localhost:8080/api/auth/discord">Login</BreadcrumbLink>)
+            return (<BreadcrumbLink href="https://bhg-website.herokuapp.com/api/auth/discord">Login</BreadcrumbLink>)
         }
     }
     return(

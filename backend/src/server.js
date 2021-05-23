@@ -49,7 +49,7 @@ mongoose.connection
     });
 
 app.use(cors({
-    origin: ['http://localhost:3000'],
+    origin: ['https://bhg-website.herokuapp.com/'],
     methods: ["GET", "POST", "PUT"],
     credentials: true
 }))
