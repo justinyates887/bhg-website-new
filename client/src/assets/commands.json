@@ -1,0 +1,63 @@
+{
+    "setup": {
+        "blacklist": {
+            "name": "blacklist",
+            "description": "Allows you to black certain words from being sent in your server."
+        },
+        "serverstats": {
+            "name": "serverstats",
+            "description": "Adds private voice channels under a \"Server Stats\" category showing member count, channel count, role count, and bot count."
+        },
+        "setadminroles": {
+            "name": "setadminroles",
+            "description": "Allows server owner to set which roles they want to be able to use the admin commands."
+        },
+        "setapprovalchannel": {
+            "name": "setapprovalchannel",
+            "description": "Sets channel where approved suggestions will go."
+        },
+        "setsuggestchannel": {
+            "name": "setsuggestchannel",
+            "description": "Sets channel where your users can send suggestions with the suggest command."
+        },
+        "setlogschannel": {
+            "name": "setlogschannel",
+            "description": "Sets channel where the bot's logs will go to."
+        }, 
+        "setmemberrole": {
+            "name": "setmemberrole",
+            "description": "Sets the base member role that will be given to new members OR verified members."
+        },
+        "setmuterole": {
+            "name": "setmuterole",
+            "description": "Sets the role to give members when the mute command is ran."
+        },
+        "setprefix": {
+            "name": "setprefix",
+            "description": "Sets the prefix used to invoke this bot's commands for your server",
+            "usage": "<prefix>setprefix <desired prefix>"
+        }, 
+        "setticketcategory": {
+            "name": "setticketcategory",
+            "description": "Sets the category where user created tickets will go, required for tickets command.",
+            "usage": "<prefix>setticketcategory <categoryID>"
+        },
+        "welcome": {
+            "name": "welcome",
+            "description": "Sets welcome channel for welcome cards",
+            "usage": ""
+        }, 
+        "antiad": {
+            "name": "antiad",
+            "description": "Allows for you to choose whether or not Discord server invitations are able to be sent in your server.",
+            "usage": "<prefix>antiad <on/off>"
+        }
+    },
+    "admin": {
+        "ban": {
+            "name": "ban",
+            "description": "Permanantly bans targeted user from you server.",
+            "usage": "<prefix>ban <@target>"
+        }
+    }
+}

@@ -1,6 +1,6 @@
 export { Menu } from './menu'
 export { Payment } from './payment'
-export { Commands } from './commands'
+export {  } from './commands'
 export { Faq } from './faq'
 export { Landing } from './landing'
 export { Music } from './music'
