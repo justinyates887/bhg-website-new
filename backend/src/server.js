@@ -48,6 +48,10 @@ mongoose.connection
         console.error('[mongoose] reconnection failed due to error:' + error);
     });
 
+if(process.env.NODE_ENV === 'production'){
+    app.use(express.static('client/build'))
+}
+
 app.use(cors({
     origin: ['https://bhg-website.herokuapp.com/'],
     methods: ["GET", "POST", "PUT"],
