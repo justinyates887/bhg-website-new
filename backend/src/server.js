@@ -70,6 +70,10 @@ app.use(passport.session())
 
 app.use('/api', routes);
 
+app.get('*', (request, response) => {
+	response.sendFile(path.join(__dirname, 'client/build', 'index.html'));
+});
+
 app.listen(PORT, () => {
     console.log(`App running on port ${PORT}`);
 });
