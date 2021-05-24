@@ -1,4 +1,3 @@
-require('dotenv').config()
 require('./strategies/discord')
 const routes = require('./routes')
 
