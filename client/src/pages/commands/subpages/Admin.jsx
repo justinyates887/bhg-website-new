@@ -14,7 +14,7 @@ export function AdminCommands({
     React.useEffect( () => {
         getUserDetails()
         .then(( {data} ) => {
-            setUser(data)
+            if (data) setUser(data)
             return setLoading(false)
         }).catch((err) => {
             console.log(err)
