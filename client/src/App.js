@@ -1,6 +1,6 @@
 import './assets/styles/App.css';
 import { Switch, Route } from 'react-router-dom'
-import { Menu, Dashboard, Payment, Landing, Faq, Music, Support, Warnings } from './pages';
+import { Menu, Dashboard, Payment, Landing, Music, Support, Warnings } from './pages';
 import { SetupCommands, AdminCommands, FunCommands, MusicCommands, EconomyCommands, InteractionCommands, SupportCommands } from './pages/commands';
 
 function App() {
