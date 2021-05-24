@@ -7,6 +7,7 @@ const passport = require('passport')
 const cors = require('cors')
 const session = require('express-session')
 const Store = require('connect-mongo')
+const path = require('path')
 
 const app = express();
 
@@ -46,7 +47,7 @@ mongoose.connection
     });
 
 if(process.env.NODE_ENV === 'production'){
-    app.use(express.static('../client/build'))
+    app.use(express.static('client/build'))
 }
 
 app.use(cors({
