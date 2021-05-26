@@ -53,7 +53,7 @@ if(process.env.NODE_ENV === 'production'){
 }
 
 app.use(cors({
-    origin: ['https://localhost:3000/'],
+    origin: ['http://localhost:3000'],
     methods: ["GET", "POST", "PUT"],
     credentials: true
 }))
@@ -73,9 +73,9 @@ app.use(passport.session())
 
 app.use('/api', routes);
 
-app.get('*', (request, response) => {
-	response.sendFile(path.join(__dirname, 'client/build', 'index.html'));
-});
+// app.get('*', (request, response) => {
+// 	response.sendFile(path.join(__dirname, 'client/build', 'index.html'));
+// });
 
 app.listen(PORT, () => {
     console.log(`App running on port ${PORT}`);
