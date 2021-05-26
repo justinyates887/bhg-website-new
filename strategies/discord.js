@@ -3,6 +3,7 @@ const DiscordStrategy = require('passport-discord')
 const User = require('../db/schemas/user')
 const OAuth2Credentials = require('../db/schemas/OAuth2Credentials')
 const { encrypt } = require('../utils/utils')
+require('dotenv').config()
 
 
 passport.serializeUser((user, done) => {

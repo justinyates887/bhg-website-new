@@ -1,4 +1,5 @@
 require('./strategies/discord')
+require('dotenv').config()
 const routes = require('./routes')
 
 const express = require("express");
@@ -15,6 +16,7 @@ const PORT = process.env.PORT || 8081;
 
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
+app.use(express.static('public'))
 
 mongoose.connect(process.env.URI,
     {
@@ -51,7 +53,7 @@ if(process.env.NODE_ENV === 'production'){
 }
 
 app.use(cors({
-    origin: ['https://bhg-website.herokuapp.com/'],
+    origin: ['https://localhost:3000/'],
     methods: ["GET", "POST", "PUT"],
     credentials: true
 }))

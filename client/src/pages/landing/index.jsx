@@ -14,7 +14,7 @@ export function Landing({ history }){
     React.useEffect( () => {
         getUserDetails()
         .then(( {data} ) => {
-            setUser(data)
+            if(data) setUser(data)
             return getMyGuilds()
         }).then(({ data }) => {
             setBotGuilds(data)
