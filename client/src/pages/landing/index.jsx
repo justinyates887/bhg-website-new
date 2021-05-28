@@ -2,7 +2,7 @@ import { Button } from '@chakra-ui/button'
 import { Link } from 'react-router-dom'
 import { Box, Container, Text, Wrap } from '@chakra-ui/layout'
 import React from 'react'
-import { NavHeader } from '../../components/index'
+import { NavHeader, Loader } from '../../components/index'
 import { getUserDetails, getMyGuilds } from '../../utils/api'
 
 export function Landing({ history }){
@@ -26,8 +26,12 @@ export function Landing({ history }){
         })
     }, [])
 
-    return !loading && (
-        <React.Fragment>
+    return (
+        <>
+        {loading ? (
+            <Loader />
+        ) : (
+            <React.Fragment>
             <NavHeader user={user}/>           
             <Container maxW="container.xl">
                 <Box align="center" mt={10}>
@@ -49,6 +53,11 @@ export function Landing({ history }){
                     </Link>
                 </Box>
             </Container>
-        </React.Fragment>
+            </React.Fragment>
+            )
+        }
+        </>
     )
+
+
 }

@@ -1,6 +1,6 @@
 import React from 'react'
 import { getGuildPrefix, getGuildRoles, getUserDetails, getGuildChannels, getGuildBlacklist, getGuilds, getAdminRoles } from '../../utils/api'
-import { DashboardMenu } from '../../components'
+import { DashboardMenu, Loader } from '../../components'
 import { NavHeader } from '../../components/index'
 import { updateGuildPrefix, 
     updateDefaultRole, 
@@ -131,39 +131,46 @@ export function Dashboard({
         }
     }
 
-    return !loading && (
-        <div>
-            <NavHeader user={user}/>
-            <Container  maxW="container.xl">
-                <Center>
-                <Wrap align="center" p={2}>
-                    {guildIcon(thisGuild())}
-                    <Text fontSize="3xl" color="white" p={3}>{ thisGuild().name } Dashboard</Text>
-                </Wrap>
-                </Center>
-                <DashboardMenu 
-                    user={user} 
-                    prefix={prefix}
-                    match={match}
-                    roles={roles}
-                    channels={channels}
-                    updatePrefix={updateGuildPrefixParent}
-                    updateDefaultRole={updateDefaultRoleParent}
-                    updateMuteRole={updateMuteRoleParent}
-                    updateWelcomeChannel={updateWelcomeChannelParent}
-                    updateLogsChannel={updateLogsChannelParent}
-                    updateTicketsChannel={updateTicketsChannelParent}
-                    updateSuggestionChannel={updateSuggestionChannelParent}
-                    updateApprovedSuggestionChannel={updateApprovedSuggestionChannelParent}
-                    updateAntiad={updateAntiadParent}
-                    updateBlacklist={updateBlacklistParent}
-                    blacklist={blacklist}
-                    setBlacklist={setBlacklist}
-                    adminRoles={adminRoles}
-                    setAdminRoles={setAdminRoles}
-                    updateAdminRoles={updateAdminRolesParent}
-                />
-            </Container>
-        </div>
+    return (
+        <>
+        { loading ? (
+            <Loader />
+        ) : (
+            <div>
+                <NavHeader user={user}/>
+                <Container  maxW="container.xl">
+                    <Center>
+                    <Wrap align="center" p={2}>
+                        {guildIcon(thisGuild())}
+                        <Text fontSize="3xl" color="white" p={3}>{ thisGuild().name } Dashboard</Text>
+                    </Wrap>
+                    </Center>
+                    <DashboardMenu 
+                        user={user} 
+                        prefix={prefix}
+                        match={match}
+                        roles={roles}
+                        channels={channels}
+                        updatePrefix={updateGuildPrefixParent}
+                        updateDefaultRole={updateDefaultRoleParent}
+                        updateMuteRole={updateMuteRoleParent}
+                        updateWelcomeChannel={updateWelcomeChannelParent}
+                        updateLogsChannel={updateLogsChannelParent}
+                        updateTicketsChannel={updateTicketsChannelParent}
+                        updateSuggestionChannel={updateSuggestionChannelParent}
+                        updateApprovedSuggestionChannel={updateApprovedSuggestionChannelParent}
+                        updateAntiad={updateAntiadParent}
+                        updateBlacklist={updateBlacklistParent}
+                        blacklist={blacklist}
+                        setBlacklist={setBlacklist}
+                        adminRoles={adminRoles}
+                        setAdminRoles={setAdminRoles}
+                        updateAdminRoles={updateAdminRolesParent}
+                    />
+                </Container>
+            </div>
+            )
+        }
+        </>
     )
 }

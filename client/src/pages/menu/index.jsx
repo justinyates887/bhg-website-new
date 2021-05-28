@@ -1,5 +1,5 @@
 import React from 'react'
-import { MenuComponent } from '../../components'
+import { Loader, MenuComponent } from '../../components'
 import { getUserDetails, getGuilds } from '../../utils/api'
 import { NavHeader } from '../../components/index'
 import { Container, Text } from '@chakra-ui/layout'
@@ -26,13 +26,20 @@ export function Menu({
         })
     }, [])
 
-    return !loading && (
-        <div>
-            <NavHeader user={user}/>
-            <Container maxW="container.xl">
-                <Text fontSize="5xl" color="white" align="center">{user.username}'s Menu</Text>
-                <MenuComponent guilds={ guilds } />
-            </Container>
-        </div>
+    return (
+        <>
+        { loading ? (
+            <Loader />
+        ) : (
+            <div>
+                <NavHeader user={user}/>
+                <Container maxW="container.xl">
+                    <Text fontSize="5xl" color="white" align="center">{user.username}'s Menu</Text>
+                    <MenuComponent guilds={ guilds } />
+                </Container>
+            </div>
+            )
+        }
+        </>
     )
 }

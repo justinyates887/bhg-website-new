@@ -1,5 +1,4 @@
 body {
-    background-image: url(images/bg.jpg) !important;
     display: flex;
     min-height: 100vh;
     flex-direction: column;
@@ -16,10 +15,6 @@ h4 {
 li {
     list-style: none;
 }
-
-.transparentBG {
-    background-color: rgba(0,0,0,0);
-  }
 
 #mainHead{
     margin-top: 15%;
