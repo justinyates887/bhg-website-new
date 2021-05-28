@@ -38,12 +38,12 @@ export function Included({
                         <Wrap align="center">
                             <Box p={5}>
                                 <Button bg="blue.500" color="white">
-                                    <Link to={ `/dashboard/${guild.id}` }>Dashboard</Link>
+                                    <Link to={ `/dashboard/${guild.id}` }><i class="fas fa-wrench"></i>  Dashboard</Link>
                                 </Button>
                             </Box>
                             <Box p={5}>
                                 <Button bg="red.500" color="white">
-                                    <Link to={ `/warnings/${guild.id}` }>Warnings</Link>
+                                    <Link to={ `/warnings/${guild.id}` }><i class="fas fa-exclamation-triangle"></i>  Warnings</Link>
                                 </Button>
                             </Box>
                         </Wrap>

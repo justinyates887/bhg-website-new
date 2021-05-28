@@ -61,7 +61,7 @@ export function AdminRolesDashboard({
                                         <option value={role.id} key={role.id} style={{backgroundColor: "#36393f", color: `${color(role.color)}`}}>{role.name}</option>
                                     ))}
                                 </Select>
-                                <Button type="submit" children="Add Roles" colorScheme="blue" p={2} m={4} />
+                                <Button type="submit" colorScheme="blue" p={3} m={4}><i class="fas fa-pen">  Add Roles</i></Button>
                             </form>
                         )
                     }

@@ -13,7 +13,7 @@ export function WelcomeChannelDashboard({
             <Formik
                     initialValues={{ welcomeChannel: '' }}
                     onSubmit={(values) => { 
-                        updateWelcomeChannel(values) 
+                        updateWelcomeChannel(values.welcomeChannel) 
                     }}
                 >
                     {

@@ -57,18 +57,18 @@ export function NavHeader({
                     </Box>
                     <Box>
                         <Center h="60px">
-                            <Breadcrumb spacing="8px" align="center" fontSize="lg" separator="  ">
+                            <Breadcrumb spacing="16px" align="center" fontSize="lg" separator="   ">
                                 <BreadcrumbItem>
-                                    <BreadcrumbLink href="/">Home</BreadcrumbLink>
+                                    <BreadcrumbLink href="/"><i class="fas fa-home"></i>  Home</BreadcrumbLink>
                                 </BreadcrumbItem>
                                 <BreadcrumbItem>
-                                    <BreadcrumbLink href="/commands/admin">Commands</BreadcrumbLink>
+                                    <BreadcrumbLink href="/commands/admin"><i class="fas fa-terminal"></i>  Commands</BreadcrumbLink>
                                 </BreadcrumbItem>
                                 <BreadcrumbItem>
-                                    <BreadcrumbLink href="/support">Support</BreadcrumbLink>
+                                    <BreadcrumbLink href="/support"><i class="fas fa-headset"></i>  Support</BreadcrumbLink>
                                 </BreadcrumbItem>
                                 <BreadcrumbItem>
-                                    <BreadcrumbLink href="/music">Music</BreadcrumbLink>
+                                    <BreadcrumbLink href="/music"> <i class="fas fa-music"></i>  Music</BreadcrumbLink>
                                 </BreadcrumbItem>
                             </Breadcrumb>
                         </Center>
